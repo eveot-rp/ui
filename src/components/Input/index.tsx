@@ -19,7 +19,8 @@ export interface InputProps {
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
   min?: number
   max?: number
-  autoFocus?: boolean
+  // TODO: понять зачем добавлялось свойство (не используется)
+  // autoFocus?: boolean
 }
 
 export const Input: FC<InputProps> = ({ 

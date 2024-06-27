@@ -13,7 +13,7 @@ interface ModalProps {
   onClose?: () => void
 }
 
-export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, show, style = 'dark', backdrop, image = null, description, children, width, onClose }) => {
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, show, style = 'dark', backdrop = true, image = null, description, children, width, onClose }) => {
 
   const closeIconColor = style === 'dark' ? '#515356' : '#242629'
   const placeholderIconColor = style === 'dark' ? '#242629' : '#D7D7D7'
