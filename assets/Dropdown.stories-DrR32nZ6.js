@@ -1,0 +1,17 @@
+import{j as t}from"./jsx-runtime-Cw0GR0a5.js";import{B as s}from"./index-BWPI-q__.js";import{r as c}from"./index-CTjT7uj6.js";import{I as v}from"./index-Qqwv89Gx.js";const C=r=>{const e=c.useRef(null),o=n=>{e.current instanceof HTMLElement&&e.current&&!e.current.contains(n.target)&&r(n)};return c.useEffect(()=>(document.addEventListener("click",o),()=>{document.removeEventListener("click",o)}),[e,r]),{ref:e}},u=({label:r,triggerIcon:e,triggerWidth:o="13.125rem",triggerSize:n="sm",triggerCentered:i=!1,open:d,children:g,onOpen:T,onClose:l})=>{const{ref:k}=C(()=>l&&l());return t.jsxs("div",{className:"ev-dropdown",ref:k,style:{width:o},"data-open":d,onClick:d?l:T,children:[t.jsx(s,{iconLeft:e,iconRight:"TbCaretDownFilled",size:n,centered:i,children:r}),t.jsx("div",{className:"ev-dropdown-content",children:g})]})};u.__docgenInfo={description:"",methods:[],displayName:"Dropdown",props:{open:{required:!1,tsType:{name:"boolean"},description:""},label:{required:!1,tsType:{name:"string"},description:""},triggerSize:{required:!1,tsType:{name:"union",raw:"'xs' | 'sm' | 'md'",elements:[{name:"literal",value:"'xs'"},{name:"literal",value:"'sm'"},{name:"literal",value:"'md'"}]},description:"",defaultValue:{value:"'sm'",computed:!1}},triggerCentered:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}},triggerIcon:{required:!1,tsType:{name:"union",raw:"TablerIconName | EveotIconName",elements:[{name:"unknown"},{name:"unknown"}]},description:""},triggerWidth:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"'13.125rem'",computed:!1}},onOpen:{required:!1,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:""},onClose:{required:!1,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:""}}};const b={component:u,parameters:{layout:"centered"},argTypes:{triggerIcon:{options:v}},tags:["autodocs"]},a={args:{label:"Dropdown Text"},render:r=>{const[e,o]=c.useState(!1),n=i=>{console.log(`click button with ${i.currentTarget.name} name`)};return t.jsxs(u,{...r,open:e,onOpen:()=>o(!0),onClose:()=>o(!1),children:[t.jsx(s,{name:"1",iconLeft:"TbCellSignal3",onClick:n,children:"1"}),t.jsx(s,{name:"2",iconLeft:"TbAccessPointOff",onClick:n,children:"2"}),t.jsx(s,{name:"3",iconLeft:"TbAirBalloon",onClick:n,children:"3"}),t.jsx(s,{name:"4",iconLeft:"EvFlagPL",onClick:n,children:"4"})]})}};var m,p,f;a.parameters={...a.parameters,docs:{...(m=a.parameters)==null?void 0:m.docs,source:{originalSource:`{
+  args: {
+    label: 'Dropdown Text'
+  },
+  render: props => {
+    const [test, setTest] = useState(false);
+    const onButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
+      console.log(\`click button with \${event.currentTarget.name} name\`);
+    };
+    return <Dropdown {...props} open={test} onOpen={() => setTest(true)} onClose={() => setTest(false)}>
+      <Button name='1' iconLeft='TbCellSignal3' onClick={onButtonClick}>1</Button>
+      <Button name='2' iconLeft='TbAccessPointOff' onClick={onButtonClick}>2</Button>
+      <Button name='3' iconLeft='TbAirBalloon' onClick={onButtonClick}>3</Button>
+      <Button name='4' iconLeft='EvFlagPL' onClick={onButtonClick}>4</Button>
+    </Dropdown>;
+  }
+}`,...(f=(p=a.parameters)==null?void 0:p.docs)==null?void 0:f.source}}};const h=["Default"];export{a as Default,h as __namedExportsOrder,b as default};

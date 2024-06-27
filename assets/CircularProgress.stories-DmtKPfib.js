@@ -1,5 +1,0 @@
-import{j as r}from"./jsx-runtime-qGIIFXMu.js";import"./index-CDs2tPxN.js";const t=({progress:i=0})=>{const e=80*Math.PI,n=e-i/100*e;return r.jsx("div",{className:"ev-circular-progress",children:r.jsxs("svg",{className:"ev-circular-progress-svg",width:"100%",height:"100%",viewBox:"0 0 100 100",children:[r.jsx("circle",{r:40,cx:"50",cy:"50",className:"ev-circular-progress-track"}),r.jsx("circle",{r:40,cx:"50",cy:"50",className:"progress",strokeDasharray:e,strokeDashoffset:n})]})})};t.__docgenInfo={description:"",methods:[],displayName:"CircularProgress",props:{progress:{required:!1,tsType:{name:"number"},description:"",defaultValue:{value:"0",computed:!1}}}};const d={component:t,parameters:{layout:"centered"},argTypes:{progress:{control:"range"}},tags:["autodocs"]},s={args:{progress:50}};var a,o,c;s.parameters={...s.parameters,docs:{...(a=s.parameters)==null?void 0:a.docs,source:{originalSource:`{
-  args: {
-    progress: 50
-  }
-}`,...(c=(o=s.parameters)==null?void 0:o.docs)==null?void 0:c.source}}};const g=["Default"];export{s as Default,g as __namedExportsOrder,d as default};

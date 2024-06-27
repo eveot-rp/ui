@@ -1,0 +1,8 @@
+import{j as d}from"./jsx-runtime-Cw0GR0a5.js";import{r as e}from"./index-CTjT7uj6.js";const l=({value:u,onFinish:a})=>{const[r,g]=e.useState(!0),[n,m]=e.useState(!1),p=u.toUpperCase().split(""),[c,v]=e.useState([]),[C,E]=e.useState(-1),i=e.useCallback(s=>{!r||n||(s.stopPropagation(),v(t=>[...t,s.key.toUpperCase()]))},[r,n]);return e.useEffect(()=>{if(c.length===0)return;const s=p.join("").includes(c.join(""));s&&c.length===p.length?m(!0):s||(g(!1),m(!0)),E(t=>t+1)},[c]),e.useEffect(()=>{a&&n&&a(r)},[a,r,n]),e.useEffect(()=>(document.addEventListener("keydown",i),()=>document.removeEventListener("keydown",i)),[i]),d.jsx("div",{className:"ev-captcha",children:p.map((s,t)=>d.jsx("div",{className:"ev-captcha-value","data-active":t<=C,"data-success":r,children:s},t))})};l.__docgenInfo={description:"",methods:[],displayName:"Captcha",props:{value:{required:!0,tsType:{name:"string"},description:""},onFinish:{required:!1,tsType:{name:"signature",type:"function",raw:"(success: boolean) => void",signature:{arguments:[{type:{name:"boolean"},name:"success"}],return:{name:"void"}}},description:""}}};const j={component:l,parameters:{layout:"centered"},tags:["autodocs"]},o={args:{value:"240DGE"},render:u=>d.jsx(l,{...u,onFinish:a=>alert(`Captcha success: ${a}`)})};var f,h,y;o.parameters={...o.parameters,docs:{...(f=o.parameters)==null?void 0:f.docs,source:{originalSource:`{
+  args: {
+    value: '240DGE'
+  },
+  render: props => {
+    return <Captcha {...props} onFinish={success => alert(\`Captcha success: \${success}\`)} />;
+  }
+}`,...(y=(h=o.parameters)==null?void 0:h.docs)==null?void 0:y.source}}};const b=["Default"];export{o as Default,b as __namedExportsOrder,j as default};
