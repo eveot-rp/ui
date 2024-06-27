@@ -1,9 +1,7 @@
 import { FC, PropsWithChildren } from 'react'
 import './style.scss'
 
-interface ButtonsGroupProps {
-
-}
+interface ButtonsGroupProps {}
 
 export const ButtonsGroup: FC<PropsWithChildren<ButtonsGroupProps>> = ({ children }) => {
   return (

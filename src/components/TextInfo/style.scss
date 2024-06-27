@@ -16,7 +16,7 @@
     background: $ev--b-300;
   }
 
-  &:active {
+  &:active:not([data-disabled="true"]) {
     @extend %active;
   }
 
@@ -28,6 +28,7 @@
     color: $ev--b-200;
     border: 1px solid $ev--b-400;
     background: $ev--b-600;
+    cursor: not-allowed;
   }
 }
 

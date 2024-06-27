@@ -2,11 +2,21 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["./components/*"],
-      "@legacycomponents/*": ["./legacycomponents/*"],
-      "@assets/*": ["./assets/*"],
-      "@utils/*": ["./utils/*"],
-      "@hooks/*": ["./hooks/*"],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@legacycomponents/*": [
+        "./src/legacycomponents/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
     }
   }
 }

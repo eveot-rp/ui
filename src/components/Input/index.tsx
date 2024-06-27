@@ -1,6 +1,6 @@
 import { Icon, IconName } from '@components/Icon';
-import { TextInfo } from '@components/TextInfo';
-import { ChangeEvent, FC, useRef } from 'react';
+import { TextInfo, TextInfoProps } from '@components/TextInfo';
+import { ChangeEvent, FC, MouseEvent, useRef } from 'react';
 import './style.scss';
 
 export interface InputProps {
@@ -15,10 +15,11 @@ export interface InputProps {
   disabled?: boolean
   iconLeft?: IconName
   iconRight?: IconName
-  textInfo?: TextInfo
+  textInfo?: TextInfoProps
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
   min?: number
   max?: number
+  autoFocus?: boolean
 }
 
 export const Input: FC<InputProps> = ({ 
@@ -27,7 +28,6 @@ export const Input: FC<InputProps> = ({
   type = 'text',
   invalid,
   label,
-  value,
   textInfo,
   iconLeft,
   iconRight,
@@ -49,18 +49,28 @@ export const Input: FC<InputProps> = ({
     onChange && onChange(event)
   }
 
+  const onComponentClick = () => {
+    if (inputRef.current) {
+      const lenght = inputRef.current.value.length
+      inputRef.current.focus()
+      inputRef.current.setSelectionRange(lenght, lenght)
+    }
+  }
+
+  const onInputClick = (event: MouseEvent) => event.stopPropagation() 
+
   return (
     <div
       className="ev-input"
       data-style={ style }
       data-invalid={ invalid }
       data-size={ size }
-      onClick={ () => inputRef.current?.focus() }
+      onClick={ onComponentClick }
     >
       { label && <label>{ label }</label> }
       <div className="ev-input-wrapper">
         { iconLeft && <Icon name={ iconLeft } /> }
-        <input ref={ inputRef } onChange={ _onChange } value={ value } type={ type !== 'number' ? type : 'text' } {...props} />
+        <input ref={ inputRef } onChange={ _onChange } onClick={ onInputClick } type={ type !== 'number' ? type : 'text' } {...props} />
         { iconRight && <Icon name={iconRight } /> }
         { textInfo && <TextInfo {...textInfo} /> }
       </div>
