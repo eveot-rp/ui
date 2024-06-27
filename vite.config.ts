@@ -9,12 +9,12 @@ import libCss from 'vite-plugin-libcss';
 export default defineConfig({
   plugins: [
     react(), 
-    dts({ insertTypesEntry: true, exclude: ['**/*.stories.tsx', '**/*.stories.ts'] }),
+    dts({ insertTypesEntry: true, exclude: ['**/*.stories.tsx', '**/*.stories.ts', 'vite.config.ts'] }),
     libCss()
   ],
   build: {
     lib: {
-      name: '@eveot/ui',
+      name: '@eveot-rp/ui',
       entry: path.resolve(__dirname, './src/index.ts'),
       formats: ['es'],
       fileName: 'index',
