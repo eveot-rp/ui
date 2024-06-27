@@ -4,9 +4,14 @@
   align-items: center;
   position: relative;
 
-  .ev-button:first-child .ev-icon:last-child {
-    transition: .3s;
+  .ev-button {
+    width: 100%;
+
+    :first-child .ev-icon:last-child {
+      transition: .3s;
+    }
   }
+
 
   &[data-open="true"] {
     > .ev-button:first-child .ev-icon:last-child {
@@ -29,9 +34,10 @@
 
     .ev-button {
       border-radius: 0;
-      border: 0;
+      border: 0 !important;
       border-bottom: 1px solid $ev--b-300;
       justify-content: flex-start;
+      width: 100%;
     }
   }
 
