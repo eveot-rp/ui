@@ -35,7 +35,7 @@ jobs:
       run: yarn build-storybook
 
     - name: Create CNAME file
-      run: echo 'storybook.eveot.com' > ./storybook-static/CNAME
+      run: echo 'storybook.eveot-rp.com' > ./storybook-static/CNAME
 
     - name: Deploy Storybook to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
