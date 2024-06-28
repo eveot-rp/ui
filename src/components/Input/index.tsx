@@ -1,27 +1,18 @@
 import { Icon, IconName } from '@components/Icon';
 import { TextInfo, TextInfoProps } from '@components/TextInfo';
 import { combineRefs } from '@utils/combineRefs';
-import { ChangeEvent, forwardRef, MouseEvent, useRef } from 'react';
+import { forwardRef, InputHTMLAttributes, MouseEvent, useRef } from 'react';
 import './style.scss';
 
-export interface InputProps {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'style' | 'type'> {
   type?: 'text' | 'number' | 'password';
-  name?: string;
   label?: string;
-  placeholder?: string;
-  value?: string | number;
   size?: 'xs' | 'sm' | 'md';
   style?: 'light' | 'dark';
   invalid?: boolean;
-  disabled?: boolean;
   iconLeft?: IconName;
   iconRight?: IconName;
   textInfo?: TextInfoProps;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  min?: number;
-  max?: number;
-  // TODO: понять зачем добавлялось свойство (не используется)
-  // autoFocus?: boolean
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -30,19 +21,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     parentRef
   ) => {
     const inputRef = useRef<HTMLInputElement>(null);
-
-    const _onChange = (event: ChangeEvent<HTMLInputElement>) => {
-      if (type === 'number') {
-        const value = Number(event.currentTarget.value);
-        event.currentTarget.value = String(value).replace(/[^\d]/g, '');
-        if (props.max && value > props.max) {
-          event.currentTarget.value = String(props.max);
-        } else if (props.min && value < props.min) {
-          event.currentTarget.value = String(props.min);
-        }
-      }
-      onChange && onChange(event);
-    };
 
     const onComponentClick = () => {
       if (inputRef.current) {
@@ -67,7 +45,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {iconLeft && <Icon name={iconLeft} />}
           <input
             ref={combineRefs([parentRef, inputRef])}
-            onChange={_onChange}
+            onChange={onChange}
             onClick={onInputClick}
             type={type !== 'number' ? type : 'text'}
             {...props}
