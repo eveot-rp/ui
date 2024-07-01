@@ -11,10 +11,11 @@ interface ModalProps {
   image?: string | null
   backdrop?: boolean
   absolute?: boolean
+  padding?: CSSProperties['padding']
   onClose?: () => void
 }
 
-export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'true', show, style = 'dark', backdrop = true, image = null, description, children, width, onClose }) => {
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'true', padding, show, style = 'dark', backdrop = true, image = null, description, children, width, onClose }) => {
 
   const closeIconColor = style === 'dark' ? '#515356' : '#242629'
   const placeholderIconColor = style === 'dark' ? '#242629' : '#D7D7D7'
@@ -24,7 +25,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'tr
       {
         backdrop && <div className='ev-modal-backdrop' onClick={ onClose } />
       }
-      <div className='ev-modal-wrapper' style={{ width }}>
+      <div className='ev-modal-wrapper' style={{ width, padding }}>
         {
           (title || description) && (
             <div className='ev-modal-header'>
