@@ -25,10 +25,12 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'tr
         backdrop && <div className='ev-modal-backdrop' onClick={ onClose } />
       }
       <div className='ev-modal-wrapper' style={{ width }}>
-        <div className='ev-modal-header'>
-          <div className='header-info-close-button'>
-            <div className="header-image-title">
-              {
+        {
+          (!title && !description) && (
+            <div className='ev-modal-header'>
+              <div className='header-info-close-button'>
+                <div className="header-image-title">
+                  {
                 image === undefined || image !== null && (
                   <div className="modal-image">
                     {
@@ -41,18 +43,16 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'tr
                   </div>
                 )
               }
-              <h1>{ title }</h1>
-            </div> 
-            {
-              onClose && (
+                  <h1>{ title }</h1>
+                </div> 
                 <div className='close-button' onClick={ onClose }>
                   <Icon name='TbSquareXFilled' size='1.5rem' color={ closeIconColor } />
                 </div>                  
-              )
-            }
-          </div>
-          <p>{ description }</p>
-        </div>
+              </div>
+              <p>{ description }</p>
+            </div>
+          )
+        }
         { children }
       </div>
     </div>
