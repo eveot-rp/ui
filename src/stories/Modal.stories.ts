@@ -6,6 +6,7 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
+  tags: ['autodocs'],
   argTypes: {
     image: {
       control: 'text',
@@ -13,13 +14,27 @@ export default {
     width: {
       type: 'string',
     }
-  }
+  },
 } as Meta<typeof Modal>;
 
-export const Default: StoryObj<typeof Modal> = {
+export const Static: StoryObj<typeof Modal> = {
   args: {
+    image: undefined,
     title: 'Label',
     description: 'Description',
-    image: undefined
+    absolute: false,
+    backdrop: false,
+    show: true,
+  }
+};
+
+export const FullScreen: StoryObj<typeof Modal> = {
+  args: {
+    image: undefined,
+    title: 'Label',
+    description: 'Description',
+    absolute: true,
+    backdrop: true,
+    show: true,
   }
 };

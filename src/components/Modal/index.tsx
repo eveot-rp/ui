@@ -10,16 +10,17 @@ interface ModalProps {
   style?: 'dark' | 'light'
   image?: string | null
   backdrop?: boolean
+  absolute?: boolean
   onClose?: () => void
 }
 
-export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, show, style = 'dark', backdrop = true, image = null, description, children, width, onClose }) => {
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'true', show, style = 'dark', backdrop = true, image = null, description, children, width, onClose }) => {
 
   const closeIconColor = style === 'dark' ? '#515356' : '#242629'
   const placeholderIconColor = style === 'dark' ? '#242629' : '#D7D7D7'
 
   return (
-    <div className='ev-modal' data-show={ show } data-style={ style }>
+    <div className='ev-modal' data-show={ show } data-style={ style } data-absolute={ absolute }>
       {
         backdrop && <div className='ev-modal-backdrop' onClick={ onClose } />
       }
@@ -41,10 +42,14 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, show, style = 
                 )
               }
               <h1>{ title }</h1>
-            </div>
-            <div className='close-button' onClick={ onClose }>
-              <Icon name='TbSquareXFilled' size='1.5rem' color={ closeIconColor } />
-            </div>
+            </div> 
+            {
+              onClose && (
+                <div className='close-button' onClick={ onClose }>
+                  <Icon name='TbSquareXFilled' size='1.5rem' color={ closeIconColor } />
+                </div>                  
+              )
+            }
           </div>
           <p>{ description }</p>
         </div>
