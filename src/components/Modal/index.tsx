@@ -26,7 +26,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'tr
       }
       <div className='ev-modal-wrapper' style={{ width }}>
         {
-          title?.length || description?.length && (
+          (title || description) && (
             <div className='ev-modal-header'>
               <div className='header-info-close-button'>
                 <div className="header-image-title">
