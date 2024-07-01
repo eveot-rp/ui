@@ -26,7 +26,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'tr
       }
       <div className='ev-modal-wrapper' style={{ width }}>
         {
-          (!title && !description) && (
+          (title || description) && (
             <div className='ev-modal-header'>
               <div className='header-info-close-button'>
                 <div className="header-image-title">
@@ -44,10 +44,14 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'tr
                 )
               }
                   <h1>{ title }</h1>
-                </div> 
-                <div className='close-button' onClick={ onClose }>
-                  <Icon name='TbSquareXFilled' size='1.5rem' color={ closeIconColor } />
-                </div>                  
+                </div>
+                {
+                  onClose && (
+                    <div className='close-button' onClick={ onClose }>
+                      <Icon name='TbSquareXFilled' size='1.5rem' color={ closeIconColor } />
+                    </div>                  
+                  )
+                }
               </div>
               <p>{ description }</p>
             </div>
