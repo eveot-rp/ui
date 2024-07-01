@@ -26,23 +26,23 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ title, absolute = 'tr
       }
       <div className='ev-modal-wrapper' style={{ width }}>
         {
-          (title || description) && (
+          title?.length || description?.length && (
             <div className='ev-modal-header'>
               <div className='header-info-close-button'>
                 <div className="header-image-title">
                   {
-                image === undefined || image !== null && (
-                  <div className="modal-image">
-                    {
-                      image ? (
-                        <img src={ image } />
-                      ) : (
-                        <Icon name='TbPhotoFilled' size='3.4375rem' color={ placeholderIconColor } />
-                      )
-                    }
-                  </div>
-                )
-              }
+                    image === undefined || image !== null && (
+                      <div className="modal-image">
+                        {
+                          image ? (
+                            <img src={ image } />
+                          ) : (
+                            <Icon name='TbPhotoFilled' size='3.4375rem' color={ placeholderIconColor } />
+                          )
+                        }
+                      </div>
+                    )
+                  }
                   <h1>{ title }</h1>
                 </div>
                 {
