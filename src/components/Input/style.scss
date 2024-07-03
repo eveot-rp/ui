@@ -33,17 +33,28 @@
 }
 
 %label {
-  label {
+
+  label,
+  .ev-input-description {
     font-size: 0.875rem;
+    font-weight: 500;
     color: $ev--b-100;
   }
 
-  &[data-style="dark"] label {
-    color: $ev--b-100
+  &[data-style="dark"] {
+
+    label,
+    .ev-input-description {
+      color: $ev--b-100
+    }
   }
 
-  &[data-style="light"] label {
-    color: $ev--b-300
+  &[data-style="light"] {
+
+    label,
+    .ev-input-description {
+      color: $ev--b-300
+    }
   }
 }
 
@@ -161,7 +172,13 @@
     }
   }
 
-  &[data-invalid="true"] .ev-input-wrapper {
-    border: 1px solid $ev--a-100 !important;
+  &[data-invalid="true"] {
+    .ev-input-wrapper {
+      border: 1px solid $ev--a-100 !important;
+    }
+
+    .ev-input-description {
+      color: $ev--a-100;
+    }
   }
 }

@@ -10,17 +10,18 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     iconLeft: {
-      options: IconNames
+      options: IconNames,
     },
     iconRight: {
-      options: IconNames
-    }
-  }
+      options: IconNames,
+    },
+  },
 } as Meta<typeof Input>;
 
 export const Default: StoryObj<typeof Input> = {
   args: {
     label: 'Label',
     placeholder: 'Placeholder',
+    description: 'Description',
   },
 };

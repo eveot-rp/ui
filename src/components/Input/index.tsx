@@ -7,6 +7,7 @@ import './style.scss';
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'style' | 'type'> {
   type?: 'text' | 'number' | 'password';
   label?: string;
+  description?: string;
   size?: 'xs' | 'sm' | 'md';
   style?: 'light' | 'dark';
   invalid?: boolean;
@@ -17,7 +18,19 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    { style = 'dark', size = 'md', type = 'text', invalid, label, textInfo, iconLeft, iconRight, onChange, ...props },
+    {
+      style = 'dark',
+      size = 'md',
+      type = 'text',
+      invalid,
+      label,
+      description,
+      textInfo,
+      iconLeft,
+      iconRight,
+      onChange,
+      ...props
+    },
     parentRef
   ) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -53,6 +66,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {iconRight && <Icon name={iconRight} />}
           {textInfo && <TextInfo {...textInfo} />}
         </div>
+        {description && <span className='ev-input-description'>{description}</span>}
       </div>
     );
   }
