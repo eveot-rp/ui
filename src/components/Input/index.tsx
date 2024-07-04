@@ -1,7 +1,7 @@
 import { Icon, IconName } from '@components/Icon';
 import { TextInfo, TextInfoProps } from '@components/TextInfo';
 import { combineRefs } from '@utils/combineRefs';
-import { forwardRef, InputHTMLAttributes, MouseEvent, useRef } from 'react';
+import { forwardRef, InputHTMLAttributes, MouseEvent, PropsWithChildren, useRef } from 'react';
 import './style.scss';
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'style' | 'type'> {
@@ -16,7 +16,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   textInfo?: TextInfoProps;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, PropsWithChildren<InputProps>>(
   (
     {
       style = 'dark',
@@ -29,6 +29,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       iconLeft,
       iconRight,
       onChange,
+      children,
       ...props
     },
     parentRef
@@ -65,6 +66,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           />
           {iconRight && <Icon name={iconRight} />}
           {textInfo && <TextInfo {...textInfo} />}
+          {children}
         </div>
         {description && <span className='ev-input-description'>{description}</span>}
       </div>
