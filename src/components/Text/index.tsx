@@ -7,7 +7,7 @@ type TypographyColors = keyof typeof TypographyColors;
 type TypographyWeights = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
 
 interface TextProps extends HTMLAttributes<HTMLSpanElement> {
-  size: TypographySizes;
+  size?: TypographySizes;
   color?: TypographyColors;
   weight?: TypographyWeights;
 }
@@ -21,7 +21,7 @@ export const Text: FC<PropsWithChildren<TextProps>> = ({
 }) => {
   return (
     <span
-      style={{ fontSize: TypographySizes[size], color: TypographyColors[color], fontWeight: weight }}
+      style={{ fontSize: `${TypographySizes[size]}rem`, color: TypographyColors[color], fontWeight: weight }}
       {...props}
     >
       {children}

@@ -1,9 +1,9 @@
 export const TypographySizes = {
-  h1: 24,
-  h2: 20,
-  h3: 16,
-  subheading: 14,
-  body2: 10,
+  h1: 1.5,
+  h2: 1.25,
+  h3: 1,
+  subheading: 0.875,
+  body2: 0.625,
 };
 
 export const TypographyColors = {

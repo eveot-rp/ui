@@ -19,7 +19,7 @@
     opacity: 0;
     transition: visibility 0s .3s, opacity .3s;
     white-space: nowrap;
-    margin: 10px;
+    margin: 0.625rem;
     pointer-events: none;
     @extend %position;
   }
