@@ -39,6 +39,10 @@
       background: var(--B-300, #242629);
     }
 
+    &[data-invalid="true"]:not([data-active="true"]) {
+      @extend %invalid;
+    }
+
     &[data-active="true"]:not([data-disabled="true"]) .ev-checkbox-mark {
       @extend %active;
     }
@@ -67,6 +71,10 @@
       border: 1px solid $ev--p-000;
     }
 
+    &[data-invalid="true"]:not([data-active="true"]) {
+      @extend %invalid;
+    }
+
     &[data-active="true"]:not([data-disabled="true"]) .ev-checkbox-mark {
       @extend %active;
     }
@@ -86,4 +94,12 @@
 %active {
   background: $ev--p-500;
   border: 1px solid $ev--p-400;
+}
+
+%invalid {
+  color: $ev--a-100;
+
+  .ev-checkbox-mark {
+    border: 1px solid $ev--a-100;
+  }
 }

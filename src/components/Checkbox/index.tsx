@@ -1,40 +1,45 @@
-import { Icon } from '@components/Icon'
-import { getIconColor } from '@utils/getIconColor'
-import { FC, PropsWithChildren } from 'react'
-import './style.scss'
+import { Icon } from '@components/Icon';
+import { getIconColor } from '@utils/getIconColor';
+import { FC, PropsWithChildren } from 'react';
+import './style.scss';
 
 export interface CheckboxProps {
-  dataStyle?: 'dark' | 'light'
-  disabled?: boolean
-  active?: boolean
-  onClick?: () => void
+  style?: 'dark' | 'light';
+  disabled?: boolean;
+  active?: boolean;
+  invalid?: boolean;
+  onClick?: () => void;
 }
 
 export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
   children,
   active,
   disabled,
+  invalid,
   onClick,
-  dataStyle = 'dark',
+  style = 'dark',
 }) => {
-
   const iconColor = getIconColor({
     disabledOrInactive: { value: disabled || !active, color: 'transparent' },
     active: { value: active, color: 'white' },
-  })
+  });
 
   return (
-    <div 
-      className="ev-checkbox"
-      data-style={dataStyle}
+    <div
+      className='ev-checkbox'
+      data-style={style}
       data-active={active}
       data-disabled={disabled}
+      data-invalid={invalid}
       onClick={onClick}
     >
-      <div className="ev-checkbox-mark">
-        <Icon name='TbCheck' color={ iconColor } />
+      <div className='ev-checkbox-mark'>
+        <Icon
+          name='TbCheck'
+          color={iconColor}
+        />
       </div>
-      { children }
+      {children}
     </div>
-  )
-}
+  );
+};
