@@ -19,7 +19,7 @@ export const CircularProgress: FC<CircularProgressProps> = ({
 }) => {
   const radius = 40;
   const circumference = radius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (progress / max) * circumference;
+  const strokeDashoffset = circumference - ((progress < max ? progress : max) / max) * circumference;
 
   return (
     <div
