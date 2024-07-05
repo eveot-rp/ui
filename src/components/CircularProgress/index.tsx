@@ -1,21 +1,19 @@
-import { Text } from '@components/Text';
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import './style.scss';
 
 interface CircularProgressProps {
-  label?: string | number;
   progress: number;
   max?: number;
   width?: string;
   strokeWidth?: string;
 }
 
-export const CircularProgress: FC<CircularProgressProps> = ({
-  label,
+export const CircularProgress: FC<PropsWithChildren<CircularProgressProps>> = ({
   width = '5rem',
   strokeWidth = '0.3rem',
   progress = 0,
   max = 100,
+  children,
 }) => {
   const radius = 40;
   const circumference = radius * 2 * Math.PI;
@@ -26,12 +24,7 @@ export const CircularProgress: FC<CircularProgressProps> = ({
       className='ev-circular-progress'
       style={{ width, height: width }}
     >
-      <Text
-        size='h3'
-        className='ev-circular-progress-label'
-      >
-        {label}
-      </Text>
+      <div className='ev-circular-progress-label'>{children}</div>
       <svg
         className='ev-circular-progress-svg'
         width='100%'

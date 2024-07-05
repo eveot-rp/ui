@@ -10,7 +10,7 @@ export default {
     progress: {
       control: 'range',
     },
-    label: {
+    children: {
       type: 'string',
     },
   },
