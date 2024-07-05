@@ -1,22 +1,25 @@
 @import "@assets/styles/app.scss";
 
 .ev-circular-progress {
-  width: 6.25rem;
-  height: 6.25rem;
 
   &-track {
-    stroke-width: 3;
     stroke: rgba(255, 255, 255, .2);
     fill: none;
   }
 
   .progress {
-    stroke-width: 3;
     stroke: #FFF;
     stroke-linecap: round;
     fill: none;
     transform: rotate(270deg);
     transform-origin: center;
     transition: .3s ease-out;
+  }
+
+  &-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -8,14 +8,17 @@ export default {
   },
   argTypes: {
     progress: {
-      control: 'range'
-    }
+      control: 'range',
+    },
+    label: {
+      type: 'string',
+    },
   },
   tags: ['autodocs'],
 } as Meta<typeof CircularProgress>;
 
 export const Default: StoryObj<typeof CircularProgress> = {
   args: {
-    progress: 50
-  }
+    progress: 50,
+  },
 };
