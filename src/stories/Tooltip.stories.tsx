@@ -10,21 +10,21 @@ export default {
   },
   argTypes: {
     iconLeft: {
-      options: IconNames
+      options: IconNames,
     },
     iconRight: {
-      options: IconNames
-    }
+      options: IconNames,
+    },
   },
 } as Meta<typeof Tooltip>;
 
 export const Preview: StoryObj<typeof Tooltip> = {
   args: {
-    text: 'Tooltip text'
+    text: 'Tooltip text',
   },
   render: (props) => (
     <Tooltip {...props}>
       <Button size='sm'>Tooltip</Button>
     </Tooltip>
-)
+  ),
 };

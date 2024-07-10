@@ -21,6 +21,7 @@
     white-space: nowrap;
     margin: 0.625rem;
     pointer-events: none;
+    z-index: 1000;
     @extend %position;
   }
 
