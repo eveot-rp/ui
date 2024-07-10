@@ -15,4 +15,10 @@ export declare const EvWallet: (props: EvIconProps) => import("react/jsx-runtime
 export declare const EvSteeringWheel: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvTriangle: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvRespect: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvDonateCoin: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvUsersGroup: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvUsers: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvHome: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvEye: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvEyeOff: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export {};

@@ -12,6 +12,7 @@ export * from './Input';
 export * from './Modal';
 export * from './Slider';
 export * from './Switch';
+export * from './Text';
 export * from './TextInfo';
 export * from './TextSelector';
 export * from './Tooltip';

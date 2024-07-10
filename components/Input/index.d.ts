@@ -1,23 +1,18 @@
 import { IconName } from '../Icon';
 import { TextInfoProps } from '../TextInfo';
-import { ChangeEvent, FC } from '../../../node_modules/react';
+import { InputHTMLAttributes } from '../../../node_modules/react';
 
-export interface InputProps {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'style' | 'type'> {
     type?: 'text' | 'number' | 'password';
-    name?: string;
     label?: string;
-    placeholder?: string;
-    value?: string | number;
+    description?: string;
     size?: 'xs' | 'sm' | 'md';
     style?: 'light' | 'dark';
     invalid?: boolean;
-    disabled?: boolean;
     iconLeft?: IconName;
     iconRight?: IconName;
     textInfo?: TextInfoProps;
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-    min?: number;
-    max?: number;
-    autoFocus?: boolean;
 }
-export declare const Input: FC<InputProps>;
+export declare const Input: import('../../../node_modules/react').ForwardRefExoticComponent<InputProps & {
+    children?: import('../../../node_modules/react').ReactNode | undefined;
+} & import('../../../node_modules/react').RefAttributes<HTMLInputElement>>;

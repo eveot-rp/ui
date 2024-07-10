@@ -1,1 +1,0 @@
-import{t as r}from"./index-BFGnMEML.js";import"./index-CTjT7uj6.js";const t={parameters:{controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}},backgrounds:{default:"dark"},docs:{theme:r.dark}}};export{t as default};

@@ -1,0 +1,8 @@
+import{j as d}from"./jsx-runtime-DEdD30eg.js";import{r as e}from"./index-RYns6xqu.js";const p=({value:c,onFinish:s})=>{const[r,v]=e.useState(!0),[n,m]=e.useState(!1),i=c.toUpperCase().split(""),[o,C]=e.useState([]),[g,_]=e.useState(-1),l=e.useCallback(t=>{!r||n||(t.stopPropagation(),C(a=>[...a,t.key.toUpperCase()]))},[r,n]);return e.useEffect(()=>{if(o.length===0)return;const t=i.join("").includes(o.join(""));t&&o.length===i.length?m(!0):t||(v(!1),m(!0)),_(a=>a+1)},[o]),e.useEffect(()=>{s&&n&&s(r)},[s,r,n]),e.useEffect(()=>(document.addEventListener("keydown",l),()=>document.removeEventListener("keydown",l)),[l]),d.jsx("div",{className:"ev-captcha",children:i.map((t,a)=>d.jsx("div",{className:"ev-captcha-value","data-active":a<=g,"data-success":r,children:t},a))})};try{p.displayName="Captcha",p.__docgenInfo={description:"",displayName:"Captcha",props:{value:{defaultValue:null,description:"",name:"value",required:!0,type:{name:"string"}},onFinish:{defaultValue:null,description:"",name:"onFinish",required:!1,type:{name:"((success: boolean) => void)"}}}}}catch{}const S={component:p,parameters:{layout:"centered"},tags:["autodocs"]},u={args:{value:"240DGE"},render:c=>d.jsx(p,{...c,onFinish:s=>alert(`Captcha success: ${s}`)})};var h,f,y;u.parameters={...u.parameters,docs:{...(h=u.parameters)==null?void 0:h.docs,source:{originalSource:`{
+  args: {
+    value: '240DGE'
+  },
+  render: props => {
+    return <Captcha {...props} onFinish={success => alert(\`Captcha success: \${success}\`)} />;
+  }
+}`,...(y=(f=u.parameters)==null?void 0:f.docs)==null?void 0:y.source}}};const j=["Default"];export{u as Default,j as __namedExportsOrder,S as default};

@@ -8,6 +8,9 @@ interface ModalProps {
     style?: 'dark' | 'light';
     image?: string | null;
     backdrop?: boolean;
+    absolute?: boolean;
+    padding?: CSSProperties['padding'];
+    className?: string;
     onClose?: () => void;
 }
 export declare const Modal: FC<PropsWithChildren<ModalProps>>;

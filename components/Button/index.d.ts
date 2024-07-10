@@ -1,15 +1,12 @@
 import { IconName } from '../Icon';
-import { FC, MouseEvent, PropsWithChildren } from '../../../node_modules/react';
+import { ButtonHTMLAttributes, FC, PropsWithChildren } from '../../../node_modules/react';
 
-export interface ButtonProps {
-    name?: string;
+export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
     style?: 'dark' | 'light';
     size?: 'xs' | 'sm' | 'md';
     iconLeft?: IconName;
     iconRight?: IconName;
-    disabled?: boolean;
     active?: boolean;
     centered?: boolean;
-    onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 export declare const Button: FC<PropsWithChildren<ButtonProps>>;
