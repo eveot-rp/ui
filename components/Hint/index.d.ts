@@ -2,7 +2,7 @@ import { IconName } from '../Icon';
 import { FC } from '../../../node_modules/react';
 
 interface HintProps {
-    tooltip: string;
+    tooltip?: string;
     iconLeft?: IconName;
     iconRight?: IconName;
     textLeft?: string;
