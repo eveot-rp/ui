@@ -29,7 +29,7 @@ jobs:
       run: yarn upgrade
 
     - name: Build Storybook
-      run: yarn build-storybook
+      run: yarn build:storybook
 
     - name: Create CNAME file
       run: echo 'storybook.eveot-rp.com' > ./storybook-static/CNAME

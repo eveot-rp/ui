@@ -20,12 +20,12 @@
     "url": "git+https://github.com/eveot-rp/ui.git"
   },
   "scripts": {
-    "build": "vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "build:lib": "vite build",
+    "build:storybook": "storybook build",
+    "start:dev": "storybook dev -p 6006 --no-open",
+    "npm:publish": "pnpm run build:lib && npm publish",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006 --no-open",
-    "build-storybook": "storybook build",
-    "npm:publish": "pnpm run build && npm publish"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "exports": {
     ".": {
