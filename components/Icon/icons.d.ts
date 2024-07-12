@@ -21,4 +21,5 @@ export declare const EvUsers: (props: EvIconProps) => import("react/jsx-runtime"
 export declare const EvHome: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvEye: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvEyeOff: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvPlane: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export {};
