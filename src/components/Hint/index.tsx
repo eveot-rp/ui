@@ -14,7 +14,14 @@ interface HintProps {
 export const Hint: FC<HintProps> = ({ tooltip, iconLeft, iconRight, textLeft, textRight }) => {
   return (
     <div className='ev-hint'>
-      {textLeft && <p>{textLeft}</p>}
+      {textLeft && (
+        <Text
+          size='h3'
+          className='ev-hint-text'
+        >
+          {textLeft}
+        </Text>
+      )}
       <div className='ev-hint-box'>
         {iconLeft && <Icon name={iconLeft} />}
         {tooltip && (
@@ -27,7 +34,14 @@ export const Hint: FC<HintProps> = ({ tooltip, iconLeft, iconRight, textLeft, te
         )}
         {iconRight && <Icon name={iconRight} />}
       </div>
-      {textRight && <p>{textRight}</p>}
+      {textRight && (
+        <Text
+          size='h3'
+          className='ev-hint-text'
+        >
+          {textRight}
+        </Text>
+      )}
     </div>
   );
 };
