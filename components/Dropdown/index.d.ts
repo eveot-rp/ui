@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from '../../../node_modules/react';
 import { IconName } from '..';
 
-interface DropdownProps {
+export interface DropdownProps {
     open?: boolean;
     label?: string;
     triggerSize?: 'xs' | 'sm' | 'md';
@@ -12,4 +12,3 @@ interface DropdownProps {
     onClose?: () => void;
 }
 export declare const Dropdown: FC<PropsWithChildren<DropdownProps>>;
-export {};

@@ -1,6 +1,6 @@
 import { ChangeEvent, FC } from '../../../node_modules/react';
 
-interface SliderProps {
+export interface SliderProps {
     label?: string;
     style?: 'light' | 'dark';
     value?: number;
@@ -11,4 +11,3 @@ interface SliderProps {
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 export declare const Slider: FC<SliderProps>;
-export {};

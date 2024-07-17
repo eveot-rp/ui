@@ -1,6 +1,6 @@
 import { CSSProperties, FC, PropsWithChildren } from '../../../node_modules/react';
 
-interface ModalProps {
+export interface ModalProps {
     title?: string;
     description?: string;
     show?: boolean;
@@ -8,10 +8,9 @@ interface ModalProps {
     style?: 'dark' | 'light';
     image?: string | null;
     backdrop?: boolean;
-    absolute?: boolean;
+    centered?: boolean;
     padding?: CSSProperties['padding'];
     className?: string;
     onClose?: () => void;
 }
 export declare const Modal: FC<PropsWithChildren<ModalProps>>;
-export {};
