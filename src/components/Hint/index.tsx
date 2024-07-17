@@ -3,7 +3,7 @@ import { Text } from '@components/Text';
 import { FC } from 'react';
 import './style.scss';
 
-interface HintProps {
+export interface HintProps {
   tooltip?: string;
   iconLeft?: IconName;
   iconRight?: IconName;

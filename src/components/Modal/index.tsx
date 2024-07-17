@@ -2,7 +2,7 @@ import { Icon } from '@components/Icon';
 import { CSSProperties, FC, PropsWithChildren } from 'react';
 import './style.scss';
 
-interface ModalProps {
+export interface ModalProps {
   title?: string;
   description?: string;
   show?: boolean;
@@ -10,7 +10,7 @@ interface ModalProps {
   style?: 'dark' | 'light';
   image?: string | null;
   backdrop?: boolean;
-  absolute?: boolean;
+  centered?: boolean;
   padding?: CSSProperties['padding'];
   className?: string;
   onClose?: () => void;
@@ -18,7 +18,7 @@ interface ModalProps {
 
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   title,
-  absolute = 'true',
+  centered = 'true',
   padding,
   show,
   style = 'dark',
@@ -38,7 +38,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
       className={`ev-modal ${className}`}
       data-show={show}
       data-style={style}
-      data-absolute={absolute}
+      data-centered={centered}
     >
       {backdrop && (
         <div

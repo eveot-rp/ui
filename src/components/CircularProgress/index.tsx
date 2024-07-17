@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import './style.scss';
 
-interface CircularProgressProps {
+export interface CircularProgressProps {
   progress: number;
   max?: number;
   width?: string;

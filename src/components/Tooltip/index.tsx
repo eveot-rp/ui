@@ -3,7 +3,7 @@ import { Text } from '@components/Text';
 import { FC, PropsWithChildren, useState } from 'react';
 import './style.scss';
 
-interface TooltipProps {
+export interface TooltipProps {
   text: string;
   align?: 'left' | 'right' | 'top' | 'bottom';
   iconLeft?: IconName;
