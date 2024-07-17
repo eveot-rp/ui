@@ -2,13 +2,13 @@ import { Icon } from '@components/Icon';
 import { FC, useEffect, useState } from 'react';
 import './style.scss';
 
-export interface SelectorProps {
+export interface TextSelectorProps {
   items?: Array<string>;
   disabled?: boolean;
   onChange?: (text: string, index: number) => void;
 }
 
-export const TextSelector: FC<SelectorProps> = ({ items, disabled, onChange }) => {
+export const TextSelector: FC<TextSelectorProps> = ({ items, disabled, onChange }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onChangeItem = (variant: 'prev' | 'next') => {

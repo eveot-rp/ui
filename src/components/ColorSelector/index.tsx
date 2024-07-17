@@ -3,13 +3,13 @@ import { FC, useEffect, useState } from 'react';
 import { colorsDefault } from './constants';
 import './style.scss';
 
-export interface SelectorProps {
+export interface ColorSelectorProps {
   perSwitch?: number;
   disabled?: boolean;
   onChange?: (value: number) => void;
 }
 
-export const ColorSelector: FC<SelectorProps> = ({ perSwitch, disabled, onChange }) => {
+export const ColorSelector: FC<ColorSelectorProps> = ({ perSwitch, disabled, onChange }) => {
   const [value, setValue] = useState(0);
   const colorsPerSwitch = perSwitch || 7;
 
