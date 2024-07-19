@@ -6,7 +6,7 @@
   align-items: center;
 
   &-hint {
-    transition: .3s;
+    transition: 0.3s;
     pointer-events: none;
     opacity: 0;
 
@@ -23,7 +23,6 @@
     box-sizing: border-box;
 
     &--position {
-
       &-left {
         right: calc(100% + 10px);
       }

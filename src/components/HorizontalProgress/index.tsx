@@ -1,24 +1,29 @@
-import { FC } from 'react';
-import './style.scss';
+import { FC, HTMLAttributes } from "react";
+import "./style.scss";
 
-export interface HorizontalProgressProps {
+export interface HorizontalProgressProps
+  extends HTMLAttributes<HTMLDivElement> {
   progress: number;
   disabled?: boolean;
-  size: 'sm' | 'md';
+  size: "sm" | "md";
 }
 
-export const HorizontalProgress: FC<HorizontalProgressProps> = ({ progress = 0, disabled, size = 'md' }) => {
+export const HorizontalProgress: FC<HorizontalProgressProps> = ({
+  progress = 0,
+  disabled,
+  size = "md",
+  className,
+  ...props
+}) => {
   return (
     <div
-      className='ev-horizontal-progress'
+      className={`ev-horizontal-progress ${className}`}
       data-disabled={disabled}
       data-size={size}
+      {...props}
     >
-      <div className='ev-horizontal-progress-track'>
-        <div
-          className='progress'
-          style={{ width: `${progress}%` }}
-        />
+      <div className="ev-horizontal-progress-track">
+        <div className="progress" style={{ width: `${progress}%` }} />
       </div>
     </div>
   );

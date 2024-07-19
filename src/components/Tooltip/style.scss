@@ -17,7 +17,9 @@
     border-radius: 0.5rem;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s .3s, opacity .3s;
+    transition:
+      visibility 0s 0.3s,
+      opacity 0.3s;
     white-space: nowrap;
     margin: 0.625rem;
     pointer-events: none;
@@ -28,7 +30,7 @@
   &[data-show="true"] .ev-tooltip-box {
     visibility: visible;
     opacity: 1;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
   }
 }
 

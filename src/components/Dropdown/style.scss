@@ -8,10 +8,9 @@
     width: 100%;
 
     :first-child .ev-icon:last-child {
-      transition: .3s;
+      transition: 0.3s;
     }
   }
-
 
   &[data-open="true"] {
     > .ev-button:first-child .ev-icon:last-child {
@@ -23,7 +22,9 @@
     position: absolute;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s .3s, opacity .3s;
+    transition:
+      visibility 0s 0.3s,
+      opacity 0.3s;
     width: 100%;
     top: calc(100% + 0.625rem);
     border-radius: 0.625rem;
@@ -44,6 +45,6 @@
   &[data-open="true"] .ev-dropdown-content {
     visibility: visible;
     opacity: 1;
-    transition: opacity .3s
+    transition: opacity 0.3s;
   }
 }

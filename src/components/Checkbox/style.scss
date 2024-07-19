@@ -6,10 +6,10 @@
   gap: 0.625rem;
   cursor: pointer;
   font-size: 0.875rem;
-  transition: .3s;
+  transition: 0.3s;
 
   svg {
-    transition: .3s;
+    transition: 0.3s;
   }
 
   &-mark {
@@ -19,7 +19,7 @@
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 0.348rem;
-    transition: .3s;
+    transition: 0.3s;
   }
 
   @extend %style;
@@ -31,7 +31,7 @@
 
     .ev-checkbox-mark {
       border: 1px solid var(--B-300, #242629);
-      background: var(--B-400, #1B1D20);
+      background: var(--B-400, #1b1d20);
     }
 
     &:hover .ev-checkbox-mark {
@@ -62,8 +62,8 @@
     color: $ev--b-300;
 
     .ev-checkbox-mark {
-      border: 1px solid #CBCBCB;
-      background: var(--B-100, #D7D7D7);
+      border: 1px solid #cbcbcb;
+      background: var(--B-100, #d7d7d7);
     }
 
     &:hover .ev-checkbox-mark {

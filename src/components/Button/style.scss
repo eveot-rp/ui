@@ -9,7 +9,7 @@
   border-radius: 0.625rem;
   padding: 0 1.25rem;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
   white-space: nowrap;
 
   @extend %style;
@@ -33,7 +33,6 @@
 }
 
 %style {
-
   &[data-style="dark"] {
     border: 1px solid $ev--b-300;
     background: $ev--b-500;
@@ -72,7 +71,7 @@
     &[disabled="true"] {
       pointer-events: none;
       border: 1px solid $ev--b-100;
-      background: #F3F2F7;
+      background: #f3f2f7;
       color: $ev--b-100;
     }
   }

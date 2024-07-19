@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.938rem;
-  transition: .3s;
+  transition: 0.3s;
   cursor: text;
 
   @extend %size;
@@ -13,7 +13,6 @@
 }
 
 %size {
-
   &[data-size="xs"] .ev-input-wrapper {
     height: 2.5rem;
     padding: 0rem 0.625rem;
@@ -33,7 +32,6 @@
 }
 
 %label {
-
   label,
   .ev-input-description {
     font-size: 0.875rem;
@@ -41,18 +39,16 @@
   }
 
   &[data-style="dark"] {
-
     label,
     .ev-input-description {
-      color: $ev--b-100
+      color: $ev--b-100;
     }
   }
 
   &[data-style="light"] {
-
     label,
     .ev-input-description {
-      color: $ev--b-300
+      color: $ev--b-300;
     }
   }
 }
@@ -62,12 +58,12 @@
     outline: none;
     border: none;
     background: none;
-    transition: .3s;
+    transition: 0.3s;
     width: 100%;
     font-size: 0.875rem;
 
     &::placeholder {
-      transition: .3s;
+      transition: 0.3s;
     }
 
     &:focus::placeholder {
@@ -85,7 +81,7 @@
     gap: 0.625rem;
     border-radius: 0.625rem;
     padding: 0 1.25rem;
-    transition: .3s;
+    transition: 0.3s;
   }
 
   &[data-style="dark"] .ev-input-wrapper {
@@ -124,19 +120,19 @@
       color: $ev--b-100;
 
       &::placeholder {
-        color: $ev--b-200
+        color: $ev--b-200;
       }
     }
   }
 
   &[data-style="light"] .ev-input-wrapper {
-    border: 1px solid #EBEBED;
-    background: #FAFAFA;
-    color: #A5A6A8;
+    border: 1px solid #ebebed;
+    background: #fafafa;
+    color: #a5a6a8;
 
     &:hover {
-      border: 1px solid #EBEBED;
-      background: #FFF;
+      border: 1px solid #ebebed;
+      background: #fff;
     }
 
     &:has(input:focus) {
@@ -146,7 +142,7 @@
     }
 
     &:has(input:disabled) {
-      border: 1px solid #EBEBED;
+      border: 1px solid #ebebed;
       background: $ev--b-000;
       color: $ev--b-100;
       cursor: not-allowed;
@@ -156,7 +152,7 @@
         cursor: not-allowed;
 
         &::placeholder {
-          color: #D7D7D7;
+          color: #d7d7d7;
         }
       }
     }
@@ -165,7 +161,7 @@
       color: $ev--b-300;
 
       &::placeholder {
-        color: #A5A6A8;
+        color: #a5a6a8;
       }
     }
   }

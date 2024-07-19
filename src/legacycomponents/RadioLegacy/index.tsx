@@ -1,4 +1,4 @@
-import './RadioLegacy.scss';
+import "./RadioLegacy.scss";
 
 export interface RadioLegacyProps {
   isActive: boolean;
@@ -6,21 +6,15 @@ export interface RadioLegacyProps {
 /**
  * @deprecated
  */
-export const RadioLegacy = (
-  {
-    isActive = false
-  }: RadioLegacyProps) => {
-
+export const RadioLegacy = ({ isActive = false }: RadioLegacyProps) => {
   return (
-    <label
-      className="ev-radio-legacy"
-    >
-      <div className={
-        [
+    <label className="ev-radio-legacy">
+      <div
+        className={[
           "ev-radio-legacy--box",
           isActive && "ev-radio-legacy--box_active",
-        ].join(' ')
-      }>
+        ].join(" ")}
+      >
         <div />
       </div>
     </label>

@@ -13,7 +13,7 @@ export default {
     },
     width: {
       type: 'string',
-    }
+    },
   },
 } as Meta<typeof Modal>;
 
@@ -22,10 +22,10 @@ export const Static: StoryObj<typeof Modal> = {
     image: undefined,
     title: 'Label',
     description: 'Description',
-    absolute: false,
+    centered: false,
     backdrop: false,
     show: true,
-  }
+  },
 };
 
 export const FullScreen: StoryObj<typeof Modal> = {
@@ -33,8 +33,8 @@ export const FullScreen: StoryObj<typeof Modal> = {
     image: undefined,
     title: 'Label',
     description: 'Description',
-    absolute: true,
+    centered: true,
     backdrop: true,
     show: true,
-  }
+  },
 };

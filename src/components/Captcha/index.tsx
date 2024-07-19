@@ -1,15 +1,20 @@
-import { FC, useCallback, useEffect, useState } from 'react';
-import './style.scss';
+import { FC, HTMLAttributes, useCallback, useEffect, useState } from "react";
+import "./style.scss";
 
-export interface CaptchaProps {
+export interface CaptchaProps extends HTMLAttributes<HTMLDivElement> {
   value: string;
   onFinish?: (success: boolean) => void;
 }
 
-export const Captcha: FC<CaptchaProps> = ({ value, onFinish }) => {
+export const Captcha: FC<CaptchaProps> = ({
+  value,
+  onFinish,
+  className,
+  ...props
+}) => {
   const [captchaSuccess, setCaptchaSuccess] = useState(true);
   const [captchaFinished, setCaptchaFinished] = useState(false);
-  const array = value.toUpperCase().split('');
+  const array = value.toUpperCase().split("");
   const [inputArray, setInputArray] = useState<string[]>([]);
   const [symbolIndex, setSymbolIndex] = useState(-1);
 
@@ -19,12 +24,12 @@ export const Captcha: FC<CaptchaProps> = ({ value, onFinish }) => {
       event.stopPropagation();
       setInputArray((prev) => [...prev, event.key.toUpperCase()]);
     },
-    [captchaSuccess, captchaFinished]
+    [captchaSuccess, captchaFinished],
   );
 
   useEffect(() => {
     if (inputArray.length === 0) return;
-    const keyInclude = array.join('').includes(inputArray.join(''));
+    const keyInclude = array.join("").includes(inputArray.join(""));
     if (keyInclude && inputArray.length === array.length) {
       setCaptchaFinished(true);
     } else if (!keyInclude) {
@@ -39,16 +44,16 @@ export const Captcha: FC<CaptchaProps> = ({ value, onFinish }) => {
   }, [onFinish, captchaSuccess, captchaFinished]);
 
   useEffect(() => {
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [onKeyDown]);
 
   return (
-    <div className='ev-captcha'>
+    <div className={`ev-captcha ${className}`} {...props}>
       {array.map((symbol, index) => (
         <div
           key={index}
-          className='ev-captcha-value'
+          className="ev-captcha-value"
           data-active={index <= symbolIndex}
           data-success={captchaSuccess}
         >

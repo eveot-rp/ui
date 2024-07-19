@@ -11,15 +11,15 @@
     height: 24px;
     border-radius: 5.556px;
     border: 2px solid $ev--b-200;
-    transition: .3s;
+    transition: 0.3s;
 
     svg {
       opacity: 0;
-      transition: .3s;
+      transition: 0.3s;
     }
 
     &_active {
-      transition: .3s;
+      transition: 0.3s;
       border-color: $ev-color--alpha;
       background: $ev-color--primary;
 

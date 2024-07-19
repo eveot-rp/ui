@@ -1,9 +1,10 @@
-import { ChangeEvent, FC, useCallback } from 'react';
-import './style.scss';
+import { ChangeEvent, FC, HTMLAttributes, useCallback } from "react";
+import "./style.scss";
 
-export interface SliderProps {
+export interface SliderProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, "style"> {
   label?: string;
-  style?: 'light' | 'dark';
+  style?: "light" | "dark";
   value?: number;
   step?: number;
   disabled?: boolean;
@@ -18,9 +19,11 @@ export const Slider: FC<SliderProps> = ({
   min = 0,
   max,
   step,
-  style = 'dark',
+  style = "dark",
   disabled,
+  className,
   onChange,
+  ...props
 }) => {
   const calculateTrackWidth = useCallback(() => {
     if (!max) return value;
@@ -31,16 +34,19 @@ export const Slider: FC<SliderProps> = ({
     return Math.min(Math.max(width, 0), 100);
   }, [value, max, min]);
 
-  const rangeVar = { '--track-width': `${calculateTrackWidth()}%` } as React.CSSProperties;
+  const rangeVar = {
+    "--track-width": `${calculateTrackWidth()}%`,
+  } as React.CSSProperties;
 
   return (
     <div
-      className='ev-slider'
+      className={`ev-slider ${className}`}
       style={rangeVar}
       data-style={style}
+      {...props}
     >
       <input
-        type='range'
+        type="range"
         value={value}
         min={min}
         max={max}

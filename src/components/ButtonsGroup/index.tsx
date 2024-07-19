@@ -1,12 +1,16 @@
-import { FC, PropsWithChildren } from 'react'
-import './style.scss'
+import { FC, HTMLAttributes, PropsWithChildren } from "react";
+import "./style.scss";
 
-interface ButtonsGroupProps {}
+type ButtonsGroupProps = HTMLAttributes<HTMLDivElement>;
 
-export const ButtonsGroup: FC<PropsWithChildren<ButtonsGroupProps>> = ({ children }) => {
+export const ButtonsGroup: FC<PropsWithChildren<ButtonsGroupProps>> = ({
+  children,
+  className,
+  ...props
+}) => {
   return (
-    <div className="ev-buttons-group">
-      { children }
+    <div className={`ev-buttons-group ${className}`} {...props}>
+      {children}
     </div>
-  )
-}
+  );
+};

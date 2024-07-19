@@ -5,7 +5,7 @@
   height: 1.5rem;
   border-radius: 1.438rem;
   background: $ev--b-500;
-  transition: .2s ease-out;
+  transition: 0.2s ease-out;
   cursor: pointer;
 
   &:hover {
@@ -30,7 +30,7 @@
     height: 1.5rem;
     border-radius: 100%;
     background: $ev--b-300;
-    transition: .2s ease-out;
+    transition: 0.2s ease-out;
   }
 
   &[data-toggle="true"] {

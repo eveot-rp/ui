@@ -10,13 +10,13 @@
     height: 1.125rem;
     border-radius: 0.25rem;
 
-    &[data-selected='true'] {
-      border: 1px solid #FFF;
+    &[data-selected="true"] {
+      border: 1px solid #fff;
     }
   }
 
   &-value {
-    color: #FFF;
+    color: #fff;
   }
 
   .ev-icon {

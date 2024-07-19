@@ -1,5 +1,5 @@
-import { IconCheckbox } from '../IconsLegacy';
-import './Checkbox.scss';
+import { IconCheckbox } from "../IconsLegacy";
+import "./Checkbox.scss";
 
 export interface ButtonProps {
   onClick: () => void;
@@ -9,30 +9,22 @@ export interface ButtonProps {
 /**
  * @deprecated
  */
-export const CheckboxLegacy = (
-  {
-    isActive = false,
-    onClick,
-    children,
-  }: ButtonProps) => {
-
+export const CheckboxLegacy = ({
+  isActive = false,
+  onClick,
+  children,
+}: ButtonProps) => {
   return (
-    <label
-      className="ev-checkbox-legacy"
-      onClick={ onClick }
-    >
-      <div className={
-        [
+    <label className="ev-checkbox-legacy" onClick={onClick}>
+      <div
+        className={[
           "ev-checkbox--box",
           isActive && "ev-checkbox--box_active",
-        ].join(' ')
-      }
+        ].join(" ")}
       >
         <IconCheckbox />
       </div>
-      <span>
-        { children }
-      </span>
+      <span>{children}</span>
     </label>
   );
 };

@@ -4,7 +4,7 @@
   outline: none;
   max-width: 100%;
   cursor: text;
-  transition: .3s;
+  transition: 0.3s;
   font-weight: 500;
   background: none;
   border-radius: 8px;
@@ -19,7 +19,7 @@
 
   &::placeholder {
     color: $ev-color--white;
-    opacity: .3;
+    opacity: 0.3;
   }
 
   &-size {

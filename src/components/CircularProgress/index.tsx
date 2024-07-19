@@ -1,7 +1,7 @@
-import { FC, PropsWithChildren } from 'react';
-import './style.scss';
+import { FC, HTMLAttributes, PropsWithChildren } from "react";
+import "./style.scss";
 
-export interface CircularProgressProps {
+export interface CircularProgressProps extends HTMLAttributes<HTMLDivElement> {
   progress: number;
   max?: number;
   width?: string;
@@ -9,40 +9,44 @@ export interface CircularProgressProps {
 }
 
 export const CircularProgress: FC<PropsWithChildren<CircularProgressProps>> = ({
-  width = '5rem',
-  strokeWidth = '0.3rem',
+  width = "5rem",
+  strokeWidth = "0.3rem",
   progress = 0,
   max = 100,
   children,
+  className,
+  ...props
 }) => {
   const radius = 40;
   const circumference = radius * 2 * Math.PI;
-  const strokeDashoffset = circumference - ((progress < max ? progress : max) / max) * circumference;
+  const strokeDashoffset =
+    circumference - ((progress < max ? progress : max) / max) * circumference;
 
   return (
     <div
-      className='ev-circular-progress'
+      className={`ev-circular-progress ${className}`}
       style={{ width, height: width }}
+      {...props}
     >
-      <div className='ev-circular-progress-label'>{children}</div>
+      <div className="ev-circular-progress-label">{children}</div>
       <svg
-        className='ev-circular-progress-svg'
-        width='100%'
-        height='100%'
-        viewBox='0 0 100 100'
+        className="ev-circular-progress-svg"
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
       >
         <circle
           r={radius}
-          cx='50'
-          cy='50'
-          className='ev-circular-progress-track'
+          cx="50"
+          cy="50"
+          className="ev-circular-progress-track"
           strokeWidth={strokeWidth}
         />
         <circle
           r={radius}
-          cx='50'
-          cy='50'
-          className='progress'
+          cx="50"
+          cy="50"
+          className="progress"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
           strokeWidth={strokeWidth}

@@ -20,13 +20,15 @@
   &[data-show="true"] {
     visibility: visible;
     opacity: 1;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
   }
 
   &[data-show="false"] {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s .3s, opacity .3s ease-in-out;
+    transition:
+      visibility 0s 0.3s,
+      opacity 0.3s ease-in-out;
   }
 
   &-backdrop {
@@ -38,7 +40,7 @@
   &[data-style="light"] {
     .ev-modal-wrapper {
       background: $ev--b-000;
-      border: 1px solid #EBEBED;
+      border: 1px solid #ebebed;
 
       .ev-modal-header {
         h1 {
@@ -52,7 +54,7 @@
     }
 
     .ev-modal-backdrop {
-      background: rgba(243, 242, 247, .9);
+      background: rgba(243, 242, 247, 0.9);
     }
   }
 
@@ -73,7 +75,7 @@
     }
 
     .ev-modal-backdrop {
-      background: rgb(16, 18, 21, .9);
+      background: rgb(16, 18, 21, 0.9);
     }
   }
 
@@ -129,7 +131,7 @@
 
           .ev-icon {
             svg {
-              transition: .3s;
+              transition: 0.3s;
             }
 
             &:hover {
