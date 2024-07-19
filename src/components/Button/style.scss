@@ -18,16 +18,16 @@
 
 %size {
   &[data-size="xs"] {
-    height: 2.5rem;
+    min-height: 2.5rem;
   }
 
   &[data-size="sm"] {
-    height: 3.125rem;
+    min-height: 3.125rem;
     border-radius: 0.5rem;
   }
 
   &[data-size="md"] {
-    height: 3.75rem;
+    min-height: 3.75rem;
     font-size: 1rem;
   }
 }

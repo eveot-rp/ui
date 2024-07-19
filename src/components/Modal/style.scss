@@ -6,6 +6,7 @@
   align-items: center;
   visibility: hidden;
   width: fit-content;
+  height: fit-content;
 
   &[data-centered="true"] {
     width: 100%;
