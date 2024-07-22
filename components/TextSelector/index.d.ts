@@ -1,7 +1,7 @@
 import { CSSProperties, FC, HTMLAttributes } from '../../../node_modules/react';
 
 export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
-    items?: Array<{
+    items: Array<{
         id: number;
         label: string;
     }>;
