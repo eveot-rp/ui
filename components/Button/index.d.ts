@@ -1,9 +1,9 @@
 import { IconName } from '../Icon';
 import { ButtonHTMLAttributes, FC, PropsWithChildren } from '../../../node_modules/react';
 
-export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
-    style?: 'dark' | 'light';
-    size?: 'xs' | 'sm' | 'md';
+export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "style"> {
+    style?: "dark" | "light";
+    size?: "xs" | "sm" | "md";
     iconLeft?: IconName;
     iconRight?: IconName;
     active?: boolean;

@@ -1,6 +1,6 @@
-import { FC, PropsWithChildren } from '../../../node_modules/react';
+import { FC, HTMLAttributes, PropsWithChildren } from '../../../node_modules/react';
 
-export interface CircularProgressProps {
+export interface CircularProgressProps extends HTMLAttributes<HTMLDivElement> {
     progress: number;
     max?: number;
     width?: string;

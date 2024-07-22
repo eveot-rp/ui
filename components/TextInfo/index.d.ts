@@ -1,7 +1,7 @@
 import { IconName } from '../Icon';
-import { FC, PropsWithChildren } from '../../../node_modules/react';
+import { FC, HTMLAttributes, PropsWithChildren } from '../../../node_modules/react';
 
-export interface TextInfoProps {
+export interface TextInfoProps extends HTMLAttributes<HTMLDivElement> {
     active?: boolean;
     disabled?: boolean;
     iconLeft?: IconName;

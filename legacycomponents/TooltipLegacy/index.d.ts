@@ -4,7 +4,7 @@ export interface TooltipProps {
     children: string | JSX.Element;
     tip: {
         hint: string | JSX.Element;
-        position: 'left' | 'left-top' | 'left-bottom' | 'bottom' | 'bottom-right' | 'bottom-left' | 'right' | 'right-top' | 'right-bottom' | 'top' | 'top-left' | 'top-right';
+        position: "left" | "left-top" | "left-bottom" | "bottom" | "bottom-right" | "bottom-left" | "right" | "right-top" | "right-bottom" | "top" | "top-left" | "top-right";
     };
 }
 /**

@@ -2,7 +2,7 @@ import { JSX } from '../../../node_modules/react';
 
 export interface ModalLegacyLegacyProps {
     title: string | JSX.Element;
-    type?: 'confirmation' | 'input' | 'hint';
+    type?: "confirmation" | "input" | "hint";
     onClick: (accepted: boolean, value?: string | number) => void;
     subtitle?: string;
     placeholder?: string;

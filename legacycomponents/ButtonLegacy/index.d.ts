@@ -3,11 +3,11 @@ export interface ButtonProps {
     children: string | JSX.Element | JSX.Element[];
     onClick: () => void;
     disabled?: boolean;
-    mode?: 'default' | 'primary' | 'white';
-    size?: 'sm' | 'lg' | 'md' | 'xlg';
+    mode?: "default" | "primary" | "white";
+    size?: "sm" | "lg" | "md" | "xlg";
     icon?: {
         value: JSX.Element;
-        position: 'right' | 'left';
+        position: "right" | "left";
     };
 }
 /**

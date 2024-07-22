@@ -1,6 +1,5 @@
-import { FC, PropsWithChildren } from '../../../node_modules/react';
+import { FC, HTMLAttributes, PropsWithChildren } from '../../../node_modules/react';
 
-interface ButtonsGroupProps {
-}
+type ButtonsGroupProps = HTMLAttributes<HTMLDivElement>;
 export declare const ButtonsGroup: FC<PropsWithChildren<ButtonsGroupProps>>;
 export {};

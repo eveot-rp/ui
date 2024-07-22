@@ -3,7 +3,7 @@ import { TypographyColors, TypographySizes } from './constants';
 
 type TypographySizes = keyof typeof TypographySizes;
 type TypographyColors = keyof typeof TypographyColors;
-type TypographyWeights = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+type TypographyWeights = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
 export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
     size?: TypographySizes;
     color?: TypographyColors;

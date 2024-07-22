@@ -1,6 +1,6 @@
-import { FC } from '../../../node_modules/react';
+import { FC, HTMLAttributes } from '../../../node_modules/react';
 
-export interface SwitchProps {
+export interface SwitchProps extends HTMLAttributes<HTMLDivElement> {
     toggle?: boolean;
     disabled?: boolean;
     onToggle?: () => void;

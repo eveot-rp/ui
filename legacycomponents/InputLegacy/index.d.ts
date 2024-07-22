@@ -5,8 +5,8 @@ export interface ButtonProps {
     value: string | number;
     name: string;
     placeholder?: string;
-    type?: 'number' | 'text' | 'password';
-    size?: 'sm' | 'lg' | 'md';
+    type?: "number" | "text" | "password";
+    size?: "sm" | "lg" | "md";
 }
 /**
  * @deprecated
