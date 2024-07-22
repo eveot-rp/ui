@@ -1,8 +1,9 @@
-@import "@assets/styles/app.scss";
+@import '@assets/styles/app.scss';
 
 .ev-text-selector {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.33rem;
 
   &-color {
@@ -10,7 +11,7 @@
     height: 1.125rem;
     border-radius: 0.25rem;
 
-    &[data-selected="true"] {
+    &[data-selected='true'] {
       border: 1px solid #fff;
     }
   }
@@ -28,7 +29,7 @@
     }
   }
 
-  &[data-disabled="true"] {
+  &[data-disabled='true'] {
     pointer-events: none;
 
     .ev-text-selector-value {
@@ -40,3 +41,4 @@
     }
   }
 }
+
