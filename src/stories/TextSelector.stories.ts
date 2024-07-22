@@ -18,15 +18,15 @@ export const Default: StoryObj<typeof TextSelector> = {
   args: {
     items: [
       {
-        id: '1',
+        id: 352,
         label: 'Text 1',
       },
       {
-        id: '2',
+        id: 455,
         label: 'Text 2',
       },
       {
-        id: '3',
+        id: 3,
         label: 'Text 3',
       },
     ],

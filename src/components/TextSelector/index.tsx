@@ -9,7 +9,7 @@ export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 
   }>;
   width?: CSSProperties['width'];
   disabled?: boolean;
-  value?: number;
+  currentId?: number;
   reset?: boolean;
   onChange?: (id: number) => void;
 }
@@ -20,11 +20,11 @@ export const TextSelector: FC<TextSelectorProps> = ({
   onChange,
   reset,
   className,
-  value,
+  currentId,
   width = '12.5rem',
   ...props
 }) => {
-  const [selectedIndex, setSelectedIndex] = useState(value || 0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onChangeItem = (variant: 'prev' | 'next') => {
     if (!items) return;
@@ -47,8 +47,10 @@ export const TextSelector: FC<TextSelectorProps> = ({
   }, [reset]);
 
   useEffect(() => {
-    setSelectedIndex(value || 0);
-  }, [value]);
+    const findedItem = items?.find((item) => item.id === currentId);
+    const index = findedItem ? items?.indexOf(findedItem) : 0;
+    setSelectedIndex(index || 0);
+  }, [currentId]);
 
   const findedItem = items?.find((_, index) => index === selectedIndex);
   if (!findedItem) return null;
