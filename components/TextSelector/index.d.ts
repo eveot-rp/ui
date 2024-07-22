@@ -8,7 +8,7 @@ export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 
     width?: CSSProperties['width'];
     disabled?: boolean;
     value?: number;
-    reset?: () => void;
+    reset?: boolean;
     onChange?: (id: number) => void;
 }
 export declare const TextSelector: FC<TextSelectorProps>;
