@@ -4,15 +4,24 @@ import './style.scss';
 
 export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   items?: Array<{
-    id: string;
+    id: number;
     label: string;
   }>;
   width: CSSProperties['width'];
   disabled?: boolean;
-  onChange?: (id: string) => void;
+  reset: () => void;
+  onChange?: (id: number) => void;
 }
 
-export const TextSelector: FC<TextSelectorProps> = ({ items, disabled, onChange, className, width, ...props }) => {
+export const TextSelector: FC<TextSelectorProps> = ({
+  items,
+  disabled,
+  onChange,
+  reset,
+  className,
+  width,
+  ...props
+}) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onChangeItem = (variant: 'prev' | 'next') => {
@@ -26,10 +35,14 @@ export const TextSelector: FC<TextSelectorProps> = ({ items, disabled, onChange,
 
   useEffect(() => {
     if (onChange) {
-      const text = items ? items[selectedIndex].id : '';
-      onChange(text);
+      const id = items ? items[selectedIndex].id : 0;
+      onChange(id);
     }
   }, [selectedIndex]);
+
+  useEffect(() => {
+    setSelectedIndex(0);
+  }, [reset]);
 
   const findedItem = items?.find((_, index) => index === selectedIndex);
   if (!findedItem) return null;
