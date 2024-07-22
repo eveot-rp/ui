@@ -3,7 +3,7 @@ import { CSSProperties, FC, HTMLAttributes, useEffect, useState } from 'react';
 import './style.scss';
 
 export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
-  items?: Array<{
+  items: Array<{
     id: number;
     label: string;
   }>;
@@ -25,6 +25,7 @@ export const TextSelector: FC<TextSelectorProps> = ({
   ...props
 }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  console.log('main render', selectedIndex);
 
   const onChangeItem = (variant: 'prev' | 'next') => {
     if (!items) return;
@@ -37,23 +38,26 @@ export const TextSelector: FC<TextSelectorProps> = ({
 
   useEffect(() => {
     if (onChange) {
+      console.log('onChange render');
       const id = items ? items[selectedIndex].id : 0;
       onChange(id);
     }
   }, [selectedIndex]);
 
   useEffect(() => {
+    console.log('reset render');
     setSelectedIndex(0);
   }, [reset]);
 
   useEffect(() => {
+    if (!items) return;
+    console.log('currentId render');
     const findedItem = items?.find((item) => item.id === currentId);
-    const index = findedItem ? items?.indexOf(findedItem) : 0;
-    setSelectedIndex(index || 0);
+    const index = findedItem ? items.indexOf(findedItem) : 0;
+    setSelectedIndex(index);
   }, [currentId]);
 
-  const findedItem = items?.find((_, index) => index === selectedIndex);
-  if (!findedItem) return null;
+  console.log('end render', selectedIndex);
 
   return (
     <div
@@ -67,7 +71,7 @@ export const TextSelector: FC<TextSelectorProps> = ({
         size='1.75rem'
         onClick={() => onChangeItem('prev')}
       />
-      <div className='ev-text-selector-value'>{findedItem.label}</div>
+      <div className='ev-text-selector-value'>{items[selectedIndex].label}</div>
       <Icon
         name='TbSquareArrowRightFilled'
         size='1.75rem'
