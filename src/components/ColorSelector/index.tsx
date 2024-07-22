@@ -11,7 +11,7 @@ export interface ColorSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>,
 }
 
 export const ColorSelector: FC<ColorSelectorProps> = ({
-  perSwitch,
+  perSwitch = 6,
   disabled,
   onChange,
   className,
@@ -19,7 +19,6 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
   ...props
 }) => {
   const [value, setValue] = useState(0);
-  const colorsPerSwitch = perSwitch || 7;
 
   const updateSwitcher = (variant: 'prev' | 'next') => {
     let nextIndex;
@@ -37,18 +36,21 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
     }
   }, [value]);
 
-  const startColorIndex = (value - Math.floor(colorsPerSwitch / 2) + colorsDefault.length) % colorsDefault.length;
+  const startColorIndex = (value - Math.floor(perSwitch / 2) + colorsDefault.length) % colorsDefault.length;
 
-  const activeColors = Array.from({ length: colorsPerSwitch }, (_, i) => {
+  const activeColors = Array.from({ length: perSwitch }, (_, i) => {
     const colorIndex = (startColorIndex + i) % colorsDefault.length;
     return colorsDefault[colorIndex];
   });
 
   useEffect(() => {
-    if (currentIndex && currentIndex !== value) {
-      setValue(currentIndex);
-    }
+    setValue(currentIndex || 0);
   }, [currentIndex]);
+
+  const onChangeSelectedColor = (colorIndex: number) => {
+    const selectedColorIndex = (startColorIndex + colorIndex) % colorsDefault.length;
+    setValue(selectedColorIndex);
+  };
 
   return (
     <div
@@ -65,10 +67,7 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
         {activeColors.map((color, index) => (
           <div
             key={index}
-            onClick={() => {
-              const selectedColorIndex = (startColorIndex + index) % colorsDefault.length;
-              setValue(selectedColorIndex);
-            }}
+            onClick={() => onChangeSelectedColor(index)}
             style={{ backgroundColor: `rgb(${color.join(', ')})` }}
             className={`ev-components--color-switcher_value ${value === (startColorIndex + index) % colorsDefault.length && 'ev-components--color-switcher_value--active'}`}
           />
