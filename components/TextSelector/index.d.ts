@@ -7,7 +7,7 @@ export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 
     }>;
     width?: CSSProperties['width'];
     disabled?: boolean;
-    value?: number;
+    currentId?: number;
     reset?: boolean;
     onChange?: (id: number) => void;
 }
