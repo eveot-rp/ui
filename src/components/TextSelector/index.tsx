@@ -3,11 +3,13 @@ import { Text } from '@components/Text';
 import { CSSProperties, FC, HTMLAttributes, useEffect, useState } from 'react';
 import './style.scss';
 
+type SelectorItem = {
+  id: number;
+  label: string;
+};
+
 export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
-  items: Array<{
-    id: number;
-    label: string;
-  }>;
+  items: SelectorItem[];
   width?: CSSProperties['width'];
   disabled?: boolean;
   currentId?: number;
@@ -23,32 +25,25 @@ export const TextSelector: FC<TextSelectorProps> = ({
   width = '12.5rem',
   ...props
 }) => {
-  const [findedIndex, setFindedIndex] = useState(0);
-  const [selectedIndex, setSelectedIndex] = useState(findedIndex);
+  const [selectedItem, setSelectedItem] = useState(items[0]);
 
   const onChangeItem = (variant: 'prev' | 'next') => {
-    if (!onChange) return;
+    const findedIndex = items.indexOf(selectedItem!);
+    if (findedIndex === -1) return;
 
     if (variant === 'prev') {
-      setSelectedIndex((selectedIndex + items.length - 1) % items.length);
-      onChange(items[selectedIndex].id);
+      const prevItem = items[(findedIndex + items.length - 1) % items.length];
+      onChange && onChange(prevItem.id);
     } else {
-      setSelectedIndex((selectedIndex + 1) % items.length);
-      onChange(items[selectedIndex].id);
+      const nextItem = items[(findedIndex + 1) % items.length];
+      onChange && onChange(nextItem.id);
     }
   };
 
   useEffect(() => {
-    const findedIndex = items.findIndex((item) => item.id === currentId);
-    const currentIndex = findedIndex !== -1 ? findedIndex : 0;
-    setFindedIndex(currentIndex);
-  }, [currentId]);
-
-  useEffect(() => {
-    if (items[findedIndex]) {
-      setSelectedIndex(findedIndex);
-    }
-  }, [findedIndex]);
+    const findedItem = items.find((item) => item.id === currentId);
+    setSelectedItem(findedItem || items[0]);
+  }, [items, currentId]);
 
   return (
     <div
@@ -66,7 +61,7 @@ export const TextSelector: FC<TextSelectorProps> = ({
         className='ev-text-selector-value'
         size='subheading'
       >
-        {items[selectedIndex] && items[selectedIndex].label}
+        {selectedItem?.label}
       </Text>
       <Icon
         name='TbSquareArrowRightFilled'

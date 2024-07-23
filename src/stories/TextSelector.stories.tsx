@@ -27,20 +27,29 @@ export const Default: StoryObj<typeof TextSelector> = {
         label: 'Text 2',
       },
       {
-        id: 3,
+        id: 643,
         label: 'Text 3',
+      },
+      {
+        id: 733,
+        label: 'Text 4',
       },
     ],
   },
   render: (props) => {
-    const [value, setValue] = useState(0);
+    const [id, setId] = useState(0);
 
-    console.log(value);
+    const onChange = (id: number) => {
+      setId(id);
+    };
+
+    console.log(id);
 
     return (
       <TextSelector
         {...props}
-        onChange={setValue}
+        currentId={id}
+        onChange={onChange}
       />
     );
   },
