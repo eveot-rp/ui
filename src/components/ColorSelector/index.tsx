@@ -28,13 +28,8 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
       nextIndex = (value + 1) % colorsDefault.length;
     }
     setValue(nextIndex);
+    onChange && onChange(value);
   };
-
-  useEffect(() => {
-    if (onChange) {
-      onChange(value);
-    }
-  }, [value]);
 
   const startColorIndex = (value - Math.floor(perSwitch / 2) + colorsDefault.length) % colorsDefault.length;
 

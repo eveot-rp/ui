@@ -32,13 +32,8 @@ export const TextSelector: FC<TextSelectorProps> = ({
     } else {
       setSelectedIndex((selectedIndex + 1) % items.length);
     }
+    onChange && onChange(items[selectedIndex].id);
   };
-
-  useEffect(() => {
-    if (onChange) {
-      onChange(items[selectedIndex].id);
-    }
-  }, [selectedIndex]);
 
   useEffect(() => {
     if (currentIndex !== selectedIndex && items[currentIndex]) {
