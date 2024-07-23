@@ -46,8 +46,6 @@ export const TextSelector: FC<TextSelectorProps> = ({
     }
   }, [currentIndex]);
 
-  if (!items[selectedIndex]) return;
-
   return (
     <div
       className={`ev-text-selector ${className}`}
@@ -64,7 +62,7 @@ export const TextSelector: FC<TextSelectorProps> = ({
         className='ev-text-selector-value'
         size='subheading'
       >
-        {items[selectedIndex].label}
+        {items[selectedIndex] && items[selectedIndex].label}
       </Text>
       <Icon
         name='TbSquareArrowRightFilled'
