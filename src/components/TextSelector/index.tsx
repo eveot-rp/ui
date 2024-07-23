@@ -23,24 +23,32 @@ export const TextSelector: FC<TextSelectorProps> = ({
   width = '12.5rem',
   ...props
 }) => {
-  const findedIndex = items.findIndex((item) => item.id === currentId);
-  const currentIndex = findedIndex !== -1 ? findedIndex : 0;
-  const [selectedIndex, setSelectedIndex] = useState(currentIndex);
+  const [findedIndex, setFindedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(findedIndex);
 
   const onChangeItem = (variant: 'prev' | 'next') => {
+    if (!onChange) return;
+
     if (variant === 'prev') {
       setSelectedIndex((selectedIndex + items.length - 1) % items.length);
+      onChange(items[selectedIndex].id);
     } else {
       setSelectedIndex((selectedIndex + 1) % items.length);
+      onChange(items[selectedIndex].id);
     }
-    onChange && onChange(items[selectedIndex].id);
   };
 
   useEffect(() => {
-    if (currentIndex !== selectedIndex && items[currentIndex]) {
-      setSelectedIndex(currentIndex);
+    const findedIndex = items.findIndex((item) => item.id === currentId);
+    const currentIndex = findedIndex !== -1 ? findedIndex : 0;
+    setFindedIndex(currentIndex);
+  }, [currentId]);
+
+  useEffect(() => {
+    if (items[findedIndex]) {
+      setSelectedIndex(findedIndex);
     }
-  }, [currentIndex]);
+  }, [findedIndex]);
 
   return (
     <div
