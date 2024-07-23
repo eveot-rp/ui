@@ -23,8 +23,9 @@ export const TextSelector: FC<TextSelectorProps> = ({
   width = '12.5rem',
   ...props
 }) => {
-  const currentIndex = items.findIndex((item) => item.id === currentId);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const findedIndex = items.findIndex((item) => item.id === currentId);
+  const currentIndex = findedIndex !== -1 ? findedIndex : 0;
+  const [selectedIndex, setSelectedIndex] = useState(currentIndex);
 
   const onChangeItem = (variant: 'prev' | 'next') => {
     if (variant === 'prev') {

@@ -6,7 +6,7 @@ import './style.scss';
 export interface ColorSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   perSwitch?: number;
   disabled?: boolean;
-  currentIndex: number;
+  currentIndex?: number;
   onChange?: (value: number) => void;
 }
 
@@ -28,7 +28,7 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
       nextIndex = (value + 1) % colorsDefault.length;
     }
     setValue(nextIndex);
-    onChange && onChange(value);
+    onChange && onChange(nextIndex);
   };
 
   const startColorIndex = (value - Math.floor(perSwitch / 2) + colorsDefault.length) % colorsDefault.length;
@@ -45,6 +45,7 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
   const onChangeSelectedColor = (colorIndex: number) => {
     const selectedColorIndex = (startColorIndex + colorIndex) % colorsDefault.length;
     setValue(selectedColorIndex);
+    onChange && onChange(selectedColorIndex);
   };
 
   return (
