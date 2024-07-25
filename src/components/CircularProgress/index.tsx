@@ -7,6 +7,7 @@ export interface CircularProgressProps extends HTMLAttributes<HTMLDivElement> {
   width?: string;
   radius?: number;
   strokeWidth?: string;
+  showTrack?: boolean;
 }
 
 export const CircularProgress: FC<PropsWithChildren<CircularProgressProps>> = ({
@@ -17,6 +18,7 @@ export const CircularProgress: FC<PropsWithChildren<CircularProgressProps>> = ({
   radius = 47,
   children,
   className,
+  showTrack = true,
   color = 'white',
   ...props
 }) => {
@@ -36,13 +38,15 @@ export const CircularProgress: FC<PropsWithChildren<CircularProgressProps>> = ({
         height='100%'
         viewBox='0 0 100 100'
       >
-        <circle
-          r={radius}
-          cx='50'
-          cy='50'
-          className='ev-circular-progress-track'
-          strokeWidth={strokeWidth}
-        />
+        {showTrack && (
+          <circle
+            r={radius}
+            cx='50'
+            cy='50'
+            className='ev-circular-progress-track'
+            strokeWidth={strokeWidth}
+          />
+        )}
         <circle
           r={radius}
           cx='50'
