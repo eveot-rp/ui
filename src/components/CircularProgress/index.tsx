@@ -5,6 +5,7 @@ export interface CircularProgressProps extends HTMLAttributes<HTMLDivElement> {
   progress: number;
   max?: number;
   width?: string;
+  radius?: number;
   strokeWidth?: string;
 }
 
@@ -13,12 +14,12 @@ export const CircularProgress: FC<PropsWithChildren<CircularProgressProps>> = ({
   strokeWidth = '0.3rem',
   progress = 0,
   max = 100,
+  radius = 47,
   children,
   className,
   color = 'white',
   ...props
 }) => {
-  const radius = 40;
   const circumference = radius * 2 * Math.PI;
   const strokeDashoffset = circumference - ((progress < max ? progress : max) / max) * circumference;
 
