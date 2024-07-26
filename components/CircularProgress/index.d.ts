@@ -7,5 +7,6 @@ export interface CircularProgressProps extends HTMLAttributes<HTMLDivElement> {
     radius?: number;
     strokeWidth?: string;
     showTrack?: boolean;
+    maxTrack?: number;
 }
 export declare const CircularProgress: FC<PropsWithChildren<CircularProgressProps>>;
