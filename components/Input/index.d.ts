@@ -2,12 +2,12 @@ import { IconName } from '../Icon';
 import { TextInfoProps } from '../TextInfo';
 import { InputHTMLAttributes } from '../../../node_modules/react';
 
-export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "style" | "type"> {
-    type?: "text" | "number" | "password";
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'style' | 'type'> {
+    type?: 'text' | 'number' | 'password';
     label?: string;
     description?: string;
-    size?: "xs" | "sm" | "md";
-    style?: "light" | "dark";
+    size?: 'xs' | 'sm' | 'md';
+    style?: 'light' | 'dark';
     invalid?: boolean;
     iconLeft?: IconName;
     iconRight?: IconName;

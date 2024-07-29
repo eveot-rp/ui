@@ -3,7 +3,7 @@ import { FC, HTMLAttributes, PropsWithChildren } from '../../../node_modules/rea
 
 export interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
     text: string;
-    align?: "left" | "right" | "top" | "bottom";
+    align?: 'left' | 'right' | 'top' | 'bottom';
     iconLeft?: IconName;
     iconRight?: IconName;
 }

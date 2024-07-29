@@ -4,7 +4,7 @@ import { IconName } from '..';
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
     open?: boolean;
     label?: string;
-    triggerSize?: "xs" | "sm" | "md";
+    triggerSize?: 'xs' | 'sm' | 'md';
     triggerCentered?: boolean;
     triggerIcon?: IconName;
     triggerWidth?: string;

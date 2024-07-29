@@ -1,8 +1,8 @@
 import { ChangeEvent, FC, HTMLAttributes } from '../../../node_modules/react';
 
-export interface SliderProps extends Omit<HTMLAttributes<HTMLDivElement>, "style"> {
+export interface SliderProps extends Omit<HTMLAttributes<HTMLDivElement>, 'style'> {
     label?: string;
-    style?: "light" | "dark";
+    style?: 'light' | 'dark';
     value?: number;
     step?: number;
     disabled?: boolean;
