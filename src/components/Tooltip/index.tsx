@@ -1,17 +1,17 @@
-import { Icon, IconName } from "@components/Icon";
-import { Text } from "@components/Text";
-import { FC, HTMLAttributes, PropsWithChildren, useState } from "react";
-import "./style.scss";
+import { Icon, IconName } from '@components/Icon';
+import { Text } from '@components/Text';
+import { FC, HTMLAttributes, PropsWithChildren, useState } from 'react';
+import './style.scss';
 
 export interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
   text: string;
-  align?: "left" | "right" | "top" | "bottom";
+  align?: 'left' | 'right' | 'top' | 'bottom';
   iconLeft?: IconName;
   iconRight?: IconName;
 }
 
 export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
-  align = "bottom",
+  align = 'bottom',
   text,
   children,
   iconLeft,
@@ -23,16 +23,22 @@ export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
 
   return (
     <div
-      className={`ev-tooltip ${className}`}
+      className={`ev-tooltip ${className ?? ''}`}
       data-show={show}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
       {...props}
     >
       {children}
-      <div className="ev-tooltip-box" data-align={align}>
+      <div
+        className='ev-tooltip-box'
+        data-align={align}
+      >
         {iconLeft && <Icon name={iconLeft} />}
-        <Text size="h3" color="b900">
+        <Text
+          size='h3'
+          color='b900'
+        >
           {text}
         </Text>
         {iconRight && <Icon name={iconRight} />}
@@ -40,3 +46,4 @@ export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
     </div>
   );
 };
+

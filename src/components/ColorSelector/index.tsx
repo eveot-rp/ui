@@ -50,7 +50,7 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
 
   return (
     <div
-      className={`ev-color-selector ${className}`}
+      className={`ev-color-selector ${className ?? ''}`}
       data-disabled={disabled}
       {...props}
     >

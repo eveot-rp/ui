@@ -1,6 +1,6 @@
-import { Icon, IconName } from "@components/Icon";
-import { FC, HTMLAttributes, PropsWithChildren } from "react";
-import "./style.scss";
+import { Icon, IconName } from '@components/Icon';
+import { FC, HTMLAttributes, PropsWithChildren } from 'react';
+import './style.scss';
 
 export interface TextInfoProps extends HTMLAttributes<HTMLDivElement> {
   active?: boolean;
@@ -28,7 +28,7 @@ export const TextInfo: FC<PropsWithChildren<TextInfoProps>> = ({
 
   return (
     <div
-      className={`ev-text-info ${className}`}
+      className={`ev-text-info ${className ?? ''}`}
       data-active={active}
       data-disabled={disabled}
       onClick={_onClick}
@@ -40,3 +40,4 @@ export const TextInfo: FC<PropsWithChildren<TextInfoProps>> = ({
     </div>
   );
 };
+

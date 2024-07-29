@@ -47,7 +47,7 @@ export const TextSelector: FC<TextSelectorProps> = ({
 
   return (
     <div
-      className={`ev-text-selector ${className}`}
+      className={`ev-text-selector ${className ?? ''}`}
       data-disabled={disabled}
       style={{ width }}
       {...props}

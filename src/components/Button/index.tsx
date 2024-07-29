@@ -1,12 +1,11 @@
-import { Icon, IconName } from "@components/Icon";
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from "react";
-import "./style.scss";
+import { Icon, IconName } from '@components/Icon';
+import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import './style.scss';
 
 // "prop?" - because Partial<> broke the doc page
-export interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "style"> {
-  style?: "dark" | "light";
-  size?: "xs" | "sm" | "md";
+export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
+  style?: 'dark' | 'light';
+  size?: 'xs' | 'sm' | 'md';
   iconLeft?: IconName;
   iconRight?: IconName;
   active?: boolean;
@@ -15,8 +14,8 @@ export interface ButtonProps
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   name,
-  style = "dark",
-  size = "md",
+  style = 'dark',
+  size = 'md',
   children,
   iconLeft,
   iconRight,
@@ -29,7 +28,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   return (
     <button
       name={name}
-      className={`ev-button ${className}`}
+      className={`ev-button ${className ?? ''}`}
       data-style={style}
       data-size={size}
       disabled={disabled}
@@ -43,3 +42,4 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     </button>
   );
 };
+

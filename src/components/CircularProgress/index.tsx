@@ -30,7 +30,7 @@ export const CircularProgress: FC<PropsWithChildren<CircularProgressProps>> = ({
 
   return (
     <div
-      className={`ev-circular-progress ${className}`}
+      className={`ev-circular-progress ${className ?? ''}`}
       style={{ width, color, height: width }}
       {...props}
     >
