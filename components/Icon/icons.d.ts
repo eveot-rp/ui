@@ -22,4 +22,9 @@ export declare const EvHome: (props: EvIconProps) => import("react/jsx-runtime")
 export declare const EvEye: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvEyeOff: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvPlane: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvMicrophone: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvEngine: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvDoors: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvSeatBelt: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvFuel: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export {};
