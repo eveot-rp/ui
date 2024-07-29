@@ -1,8 +1,7 @@
-@import "@assets/styles/app.scss";
+@import '@assets/styles/app.scss';
 
 .ev-button {
   display: flex;
-  height: fit-content;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
@@ -17,33 +16,36 @@
 }
 
 %size {
-  &[data-size="xs"] {
+  &[data-size='xs'] {
     min-height: 2.5rem;
+    height: 2.5rem;
   }
 
-  &[data-size="sm"] {
+  &[data-size='sm'] {
     min-height: 3.125rem;
+    height: 3.125rem;
     border-radius: 0.5rem;
   }
 
-  &[data-size="md"] {
+  &[data-size='md'] {
     min-height: 3.75rem;
+    height: 3.75rem;
     font-size: 1rem;
   }
 }
 
 %style {
-  &[data-style="dark"] {
+  &[data-style='dark'] {
     border: 1px solid $ev--b-300;
     background: $ev--b-500;
     color: $ev--b-000;
 
-    &:hover:not([data-active="true"]) {
+    &:hover:not([data-active='true']) {
       background: $ev--b-300;
       border: 1px solid #373839;
     }
 
-    &:active:not([data-disabled="true"]) {
+    &:active:not([data-disabled='true']) {
       @extend %active;
     }
 
@@ -55,7 +57,7 @@
     }
   }
 
-  &[data-style="light"] {
+  &[data-style='light'] {
     border: 1px solid $ev--b-100;
     background: $ev--b-000;
     color: $ev--b-900;
@@ -68,7 +70,7 @@
       }
     }
 
-    &[disabled="true"] {
+    &[disabled='true'] {
       pointer-events: none;
       border: 1px solid $ev--b-100;
       background: #f3f2f7;
@@ -76,15 +78,15 @@
     }
   }
 
-  &[data-active="true"] {
+  &[data-active='true'] {
     @extend %active;
   }
 
-  &[data-centered="true"] {
+  &[data-centered='true'] {
     justify-content: center;
   }
 
-  &[data-centered="false"] {
+  &[data-centered='false'] {
     .ev-icon:last-child {
       margin-left: auto;
     }
@@ -96,3 +98,4 @@
   background: $ev--p-500;
   color: $ev--b-000;
 }
+
