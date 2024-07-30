@@ -1,7 +1,7 @@
 import { Icon, IconName } from '@components/Icon';
 import { TextInfo, TextInfoProps } from '@components/TextInfo';
 import { combineRefs } from '@utils/combineRefs';
-import { forwardRef, InputHTMLAttributes, MouseEvent, PropsWithChildren, useRef } from 'react';
+import { forwardRef, InputHTMLAttributes, MouseEvent, PropsWithChildren, useCallback, useRef } from 'react';
 import './style.scss';
 
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'style' | 'type'> {
@@ -37,13 +37,17 @@ export const Input = forwardRef<HTMLInputElement, PropsWithChildren<InputProps>>
   ) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const onComponentClick = () => {
-      if (inputRef.current) {
-        const lenght = inputRef.current.value.length;
-        inputRef.current.focus();
-        inputRef.current.setSelectionRange(lenght, lenght);
-      }
-    };
+    const onComponentClick = useCallback(
+      (event: MouseEvent) => {
+        event.stopPropagation();
+        if (inputRef.current) {
+          const lenght = inputRef.current.value.length;
+          inputRef.current.focus();
+          inputRef.current.setSelectionRange(lenght, lenght);
+        }
+      },
+      [inputRef.current]
+    );
 
     const onInputClick = (event: MouseEvent) => event.stopPropagation();
 
@@ -53,10 +57,12 @@ export const Input = forwardRef<HTMLInputElement, PropsWithChildren<InputProps>>
         data-style={style}
         data-invalid={invalid}
         data-size={size}
-        onClick={onComponentClick}
       >
         {label && <label>{label}</label>}
-        <div className='ev-input-wrapper'>
+        <div
+          className='ev-input-wrapper'
+          onClick={onComponentClick}
+        >
           {iconLeft && <Icon name={iconLeft} />}
           <input
             ref={combineRefs([parentRef, inputRef])}
