@@ -3,7 +3,7 @@
 @import "fonts.scss";
 
 * {
-  font-family: "SF UI Display", sans-serif;
+  font-family: "SF UI Display", system-ui, -apple-system, BlinkMacSystemFont sans-serif;
   font-style: normal;
   font-weight: 500;
   padding: 0;

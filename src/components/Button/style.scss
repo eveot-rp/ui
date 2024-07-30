@@ -8,9 +8,10 @@
   font-size: 0.875rem;
   border-radius: 0.625rem;
   padding: 0 1.25rem;
-  cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
+  color: $ev--b-100;
+  cursor: pointer;
 
   @extend %style;
   @extend %size;
@@ -36,11 +37,11 @@
   &[data-style='dark'] {
     border: 1px solid $ev--b-300;
     background: $ev--b-500;
-    color: $ev--b-000;
 
     &:hover:not([data-active='true']) {
       background: $ev--b-300;
       border: 1px solid #373839;
+      color: $ev--b-000;
     }
 
     &:active:not([data-disabled='true']) {
@@ -96,4 +97,3 @@
   background: $ev--p-500;
   color: $ev--b-000;
 }
-
