@@ -4,14 +4,14 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import libCss from 'vite-plugin-libcss';
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(), 
+    react(),
     dts({ insertTypesEntry: true, exclude: ['**/*.stories.tsx', '**/*.stories.ts', 'vite.config.ts'] }),
-    libCss()
+    libCss(),
   ],
+  root: './',
   build: {
     lib: {
       name: '@eveot-rp/ui',
@@ -28,16 +28,18 @@ export default defineConfig({
           'react-icons': 'ReactIcons',
           'react-icons/tb': 'tbicons',
         },
-        minifyInternalExports: true
-      }
+        assetFileNames: '[name].[ext]',
+        chunkFileNames: '[name].[hash].js',
+        entryFileNames: '[name].[hash].js',
+        minifyInternalExports: true,
+      },
     },
-    minify: 'terser',
     cssMinify: 'lightningcss',
   },
   server: {
     fs: {
-      cachedChecks: false
-    }
+      cachedChecks: false,
+    },
   },
   resolve: {
     alias: {
@@ -46,6 +48,6 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
       '@utils': path.resolve(__dirname, './src/utils'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
-    }
+    },
   },
-})
+});
