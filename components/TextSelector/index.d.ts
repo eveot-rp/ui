@@ -2,7 +2,7 @@ import { CSSProperties, FC, HTMLAttributes } from '../../../node_modules/react';
 
 type SelectorItem = {
     id: number;
-    label: string;
+    label: string | number;
 };
 export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
     items: SelectorItem[];
