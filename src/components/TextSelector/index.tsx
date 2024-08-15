@@ -5,7 +5,7 @@ import './style.scss';
 
 type SelectorItem = {
   id: number;
-  label: string;
+  label: string | number;
 };
 
 export interface TextSelectorProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
