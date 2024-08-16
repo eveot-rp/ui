@@ -38,7 +38,7 @@
     border: 1px solid $ev--b-300;
     background: $ev--b-500;
 
-    &:hover:not([data-active='true']) {
+    &:hover:not([data-active='true']):not([disabled]) {
       background: $ev--b-300;
       border: 1px solid #373839;
       color: $ev--b-000;
