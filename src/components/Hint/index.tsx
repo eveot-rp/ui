@@ -20,6 +20,7 @@ export const Hint: FC<HintProps> = ({ tooltip, iconLeft, iconRight, textLeft, te
       {textLeft && (
         <Text
           size='h3'
+          weight='400'
           className='ev-hint-text'
         >
           {textLeft}
@@ -29,7 +30,8 @@ export const Hint: FC<HintProps> = ({ tooltip, iconLeft, iconRight, textLeft, te
         {iconLeft && <Icon name={iconLeft} />}
         {tooltip && (
           <Text
-            size='h3'
+            size='subheading'
+            weight='400'
             color='b900'
           >
             {tooltip}
@@ -40,6 +42,7 @@ export const Hint: FC<HintProps> = ({ tooltip, iconLeft, iconRight, textLeft, te
       {textRight && (
         <Text
           size='h3'
+          weight='400'
           className='ev-hint-text'
         >
           {textRight}

@@ -3,12 +3,14 @@ import './style.scss';
 
 export interface HorizontalProgressProps extends HTMLAttributes<HTMLDivElement> {
   progress: number;
+  max?: number;
   disabled?: boolean;
-  size: 'sm' | 'md';
+  size?: 'sm' | 'md';
 }
 
 export const HorizontalProgress: FC<HorizontalProgressProps> = ({
   progress = 0,
+  max = 100,
   disabled,
   size = 'md',
   className,
@@ -24,7 +26,7 @@ export const HorizontalProgress: FC<HorizontalProgressProps> = ({
       <div className='ev-horizontal-progress-track'>
         <div
           className='progress'
-          style={{ width: `${progress}%` }}
+          style={{ width: `${(progress / max) * 100}%` }}
         />
       </div>
     </div>
