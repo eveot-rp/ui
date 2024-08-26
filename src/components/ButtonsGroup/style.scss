@@ -24,4 +24,8 @@
   button:not(:first-child):not(:last-child) {
     margin-left: -0.0625rem;
   }
+
+  button:hover {
+    border-left-color: transparent !important;
+  }
 }

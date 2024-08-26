@@ -36,9 +36,19 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
       data-centered={centered}
       {...props}
     >
-      {iconLeft && <Icon name={iconLeft} />}
+      {iconLeft && (
+        <Icon
+          name={iconLeft}
+          size='1.0625rem'
+        />
+      )}
       {children}
-      {iconRight && <Icon name={iconRight} />}
+      {iconRight && (
+        <Icon
+          name={iconRight}
+          size='1.0625rem'
+        />
+      )}
     </button>
   );
 };
