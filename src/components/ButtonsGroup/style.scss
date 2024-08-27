@@ -23,7 +23,7 @@
     margin-left: -0.0625rem;
   }
 
-  button:hover {
+  button:not(:first-child):hover {
     border-left-color: transparent !important;
   }
 }
