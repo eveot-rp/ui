@@ -1,14 +1,14 @@
 @import "@assets/styles/app.scss";
 
 .ev-horizontal-progress {
-  &-track {
-    display: flex;
-    width: 12.5rem;
-    background: $ev--b-300;
-    border-radius: 1.875rem;
-    overflow: hidden;
-    transition: background-color 0.3s;
-  }
+  display: flex;
+  width: 12.5rem;
+  height: fit-content;
+  background: $ev--b-300;
+  color: $ev--p-500;
+  border-radius: 1.875rem;
+  overflow: hidden;
+  transition: background-color 0.3s;
 
   &[data-disabled="true"] {
     .ev-horizontal-progress-track {
@@ -20,16 +20,16 @@
     }
   }
 
-  &[data-size="sm"] &-track {
+  &[data-size="sm"] {
     height: 0.375rem;
   }
 
-  &[data-size="md"] &-track {
+  &[data-size="md"] {
     height: 0.5rem;
   }
 
   .progress {
-    background: $ev--p-500;
+    background: currentColor;
     height: 100%;
     border-radius: 1.875rem;
     transition: 0.3s ease-out;

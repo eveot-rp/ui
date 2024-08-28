@@ -23,12 +23,10 @@ export const HorizontalProgress: FC<HorizontalProgressProps> = ({
       data-size={size}
       {...props}
     >
-      <div className='ev-horizontal-progress-track'>
-        <div
-          className='progress'
-          style={{ width: `${(progress / max) * 100}%` }}
-        />
-      </div>
+      <div
+        className='progress'
+        style={{ width: `${(progress / max) * 100}%` }}
+      />
     </div>
   );
 };
