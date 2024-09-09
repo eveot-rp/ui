@@ -7,7 +7,7 @@ export interface HorizontalProgressProps extends HTMLAttributes<HTMLDivElement> 
   max?: number;
   disabled?: boolean;
   size?: 'sm' | 'md';
-  color: TypographyColors | string;
+  color?: TypographyColors | string;
 }
 
 export const HorizontalProgress: FC<HorizontalProgressProps> = ({
