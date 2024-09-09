@@ -2,9 +2,9 @@ import '@assets/styles/app.scss';
 import { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import { TypographyColors, TypographySizes } from './constants';
 
-type TypographySizes = keyof typeof TypographySizes;
-type TypographyColors = keyof typeof TypographyColors;
-type TypographyWeights = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+export type TypographySizes = keyof typeof TypographySizes;
+export type TypographyColors = keyof typeof TypographyColors;
+export type TypographyWeights = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
 
 export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
   /**

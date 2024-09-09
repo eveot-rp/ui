@@ -1,3 +1,4 @@
+import { TypographyColors } from '@components/Text';
 import { FC, HTMLAttributes } from 'react';
 import './style.scss';
 
@@ -6,6 +7,7 @@ export interface HorizontalProgressProps extends HTMLAttributes<HTMLDivElement> 
   max?: number;
   disabled?: boolean;
   size?: 'sm' | 'md';
+  color: TypographyColors | string;
 }
 
 export const HorizontalProgress: FC<HorizontalProgressProps> = ({
@@ -14,6 +16,7 @@ export const HorizontalProgress: FC<HorizontalProgressProps> = ({
   disabled,
   size = 'md',
   className,
+  color,
   ...props
 }) => {
   return (
@@ -25,7 +28,7 @@ export const HorizontalProgress: FC<HorizontalProgressProps> = ({
     >
       <div
         className='progress'
-        style={{ width: `${(progress / max) * 100}%` }}
+        style={{ color, width: `${(progress / max) * 100}%` }}
       />
     </div>
   );
