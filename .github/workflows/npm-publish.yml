@@ -30,11 +30,13 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Install pnpm
-        run: npm install pnpm
+        run: |
+          npm install -g pnpm
+          echo "::add-path::$(npm bin -g)"
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build project
         run: pnpm run build:lib
