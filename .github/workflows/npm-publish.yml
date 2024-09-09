@@ -31,9 +31,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install pnpm
-        run: |
-          npm install -g pnpm
-          echo "::add-path::$(npm bin -g)"
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
