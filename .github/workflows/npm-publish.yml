@@ -1,13 +1,14 @@
 name: Publish to npm
 
-# on:
-#   push:
-#     branches:
-#       - '**'
+on:
+  push:
+    branches:
+      - 'dev'
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: npm-publish
 
     steps:
       - name: Send Start Build Message
@@ -30,11 +31,14 @@ jobs:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build project
-        run: npm run build
+        run: pnpm run build:lib
         continue-on-error: true
 
       - name: Check Build Status
