@@ -13,7 +13,7 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
      * - body2: 0.625rem (12px)
      */
     size?: TypographySizes;
-    color?: TypographyColors;
+    color?: TypographyColors | string;
     weight?: TypographyWeights;
 }
 export declare const Text: FC<PropsWithChildren<TextProps>>;
