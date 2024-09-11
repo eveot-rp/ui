@@ -15,7 +15,7 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
    * - body2: 0.625rem (12px)
    */
   size?: TypographySizes;
-  color?: TypographyColors;
+  color?: TypographyColors | string;
   weight?: TypographyWeights;
 }
 
@@ -26,7 +26,7 @@ export const Text: FC<PropsWithChildren<TextProps>> = ({
   weight = '500',
   ...props
 }) => {
-  const currentColor = color in TypographyColors ? TypographyColors[color] : color;
+  const currentColor = color in TypographyColors ? TypographyColors[color as keyof typeof TypographyColors] : color;
 
   return (
     <span
