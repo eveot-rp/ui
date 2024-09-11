@@ -26,11 +26,13 @@ export const Text: FC<PropsWithChildren<TextProps>> = ({
   weight = '500',
   ...props
 }) => {
+  const currentColor = color in TypographyColors ? TypographyColors[color] : color;
+
   return (
     <span
       style={{
         fontSize: `${TypographySizes[size]}rem`,
-        color: TypographyColors[color],
+        color: currentColor,
         fontWeight: weight,
       }}
       {...props}
