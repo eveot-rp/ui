@@ -1,6 +1,6 @@
 import { Text } from '@components/Text';
 import { COLORS } from '@constants/colors';
-import { Colors } from '@type/Colors';
+import { VariableColors } from '@type/Colors';
 import { FC, HTMLAttributes } from 'react';
 import { IconBaseProps } from 'react-icons';
 import * as tbicons from 'react-icons/tb';
@@ -14,7 +14,7 @@ export type IconName = TablerIconName | EveotIconName;
 export interface IconProps extends HTMLAttributes<HTMLDivElement> {
   name: IconName;
   size?: IconBaseProps['size'];
-  color?: Colors | (string & {});
+  color?: VariableColors;
   onClick?: () => void;
 }
 

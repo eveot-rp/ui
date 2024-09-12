@@ -1,6 +1,6 @@
 import '@assets/styles/app.scss';
 import { COLORS } from '@constants/colors';
-import { Colors } from '@type/Colors';
+import { VariableColors } from '@type/Colors';
 import { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import { TypographySizes } from './constants';
 
@@ -16,7 +16,7 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
    * - body2: 0.625rem (12px)
    */
   size?: TypographySizes;
-  color?: Colors | (string & {});
+  color?: VariableColors;
   weight?: TypographyWeights;
 }
 
