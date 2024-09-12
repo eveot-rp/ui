@@ -1,4 +1,4 @@
-import { TypographyColors } from '../Text';
+import { VariableColors } from '../../types/Colors';
 import { FC, HTMLAttributes } from '../../../node_modules/react';
 
 export interface HorizontalProgressProps extends HTMLAttributes<HTMLDivElement> {
@@ -6,6 +6,6 @@ export interface HorizontalProgressProps extends HTMLAttributes<HTMLDivElement> 
     max?: number;
     disabled?: boolean;
     size?: 'sm' | 'md';
-    color?: TypographyColors | string;
+    color?: VariableColors;
 }
 export declare const HorizontalProgress: FC<HorizontalProgressProps>;
