@@ -1,8 +1,8 @@
+import { Colors } from '../../types/Colors';
 import { FC, HTMLAttributes, PropsWithChildren } from '../../../node_modules/react';
-import { TypographyColors, TypographySizes } from './constants';
+import { TypographySizes } from './constants';
 
 export type TypographySizes = keyof typeof TypographySizes;
-export type TypographyColors = keyof typeof TypographyColors;
 export type TypographyWeights = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
 export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
     /**
@@ -13,7 +13,7 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
      * - body2: 0.625rem (12px)
      */
     size?: TypographySizes;
-    color?: TypographyColors | string;
+    color?: Colors | (string & {});
     weight?: TypographyWeights;
 }
 export declare const Text: FC<PropsWithChildren<TextProps>>;

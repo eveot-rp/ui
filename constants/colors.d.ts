@@ -1,0 +1,25 @@
+export declare const COLORS: {
+    b000: string;
+    b100: string;
+    b200: string;
+    b300: string;
+    b400: string;
+    b500: string;
+    b600: string;
+    b700: string;
+    b800: string;
+    b900: string;
+    p000: string;
+    p100: string;
+    p200: string;
+    p300: string;
+    p400: string;
+    p500: string;
+    p600: string;
+    p700: string;
+    p800: string;
+    p900: string;
+    a100: string;
+    a200: string;
+    a300: string;
+};
