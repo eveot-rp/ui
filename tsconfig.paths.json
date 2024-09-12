@@ -17,6 +17,12 @@
       "@hooks/*": [
         "./src/hooks/*"
       ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@type/*": [
+        "./src/types/*"
+      ],
     }
   }
 }
