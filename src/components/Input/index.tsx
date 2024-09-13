@@ -65,6 +65,17 @@ export const Input = forwardRef<
 
     const onInputClick = (event: MouseEvent) => event.stopPropagation();
 
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.target;
+      if (type === "number") {
+        const isNumber = value.match(/^[0-9]+$/);
+        if (value === "") event.currentTarget.value = String(props.min || "");
+
+        if (!isNumber && value) return;
+      }
+      onChange && onChange(event);
+    };
+
     return (
       <div
         className={`ev-input ${className ?? ""}`}
@@ -77,7 +88,7 @@ export const Input = forwardRef<
           {iconLeft && <Icon name={iconLeft} />}
           <input
             ref={combineRefs([parentRef, inputRef])}
-            onChange={onChange}
+            onChange={handleChange}
             onClick={onInputClick}
             type={type !== "number" ? type : "text"}
             {...props}
