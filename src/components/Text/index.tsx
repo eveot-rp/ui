@@ -1,9 +1,10 @@
 import '@assets/styles/app.scss';
+import { COLORS } from '@constants/colors';
+import { VariableColors } from '@type/Colors';
 import { FC, HTMLAttributes, PropsWithChildren } from 'react';
-import { TypographyColors, TypographySizes } from './constants';
+import { TypographySizes } from './constants';
 
 export type TypographySizes = keyof typeof TypographySizes;
-export type TypographyColors = keyof typeof TypographyColors;
 export type TypographyWeights = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
 
 export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
@@ -15,7 +16,7 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
    * - body2: 0.625rem (12px)
    */
   size?: TypographySizes;
-  color?: TypographyColors | string;
+  color?: VariableColors;
   weight?: TypographyWeights;
 }
 
@@ -26,7 +27,7 @@ export const Text: FC<PropsWithChildren<TextProps>> = ({
   weight = '500',
   ...props
 }) => {
-  const currentColor = color in TypographyColors ? TypographyColors[color as keyof typeof TypographyColors] : color;
+  const currentColor = color in COLORS ? COLORS[color as keyof typeof COLORS] : color;
 
   return (
     <span

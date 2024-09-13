@@ -7,6 +7,10 @@
   .ev-button {
     width: 100%;
 
+    .ev-icon:last-child {
+      margin-left: auto;
+    }
+
     :first-child .ev-icon:last-child {
       transition: 0.3s;
     }

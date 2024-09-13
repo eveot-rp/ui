@@ -84,12 +84,6 @@
   &[data-centered='true'] {
     justify-content: center;
   }
-
-  &[data-centered='false'] {
-    .ev-icon:last-child {
-      margin-left: auto;
-    }
-  }
 }
 
 %active {
