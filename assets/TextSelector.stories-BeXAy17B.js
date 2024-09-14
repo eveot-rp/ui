@@ -1,0 +1,24 @@
+import{j as n}from"./jsx-runtime-DEdD30eg.js";import{a as x}from"./index-B57hNNvR.js";import{T as y}from"./index-rDsjxskc.js";import{r as m}from"./index-RYns6xqu.js";import"./colors-NuYFRpnV.js";const l=({items:e,disabled:o,onChange:t,className:i,currentId:a,width:T="12.5rem",...h})=>{const[s,I]=m.useState(e[0]),p=c=>{const r=e.indexOf(s);if(r!==-1)if(c==="prev"){const u=e[(r+e.length-1)%e.length];t&&t(u.id)}else{const u=e[(r+1)%e.length];t&&t(u.id)}};return m.useEffect(()=>{const c=e.find(r=>r.id===a);I(c||e[0])},[e,a]),n.jsxs("div",{className:`ev-text-selector ${i??""}`,"data-disabled":o,style:{width:T},...h,children:[n.jsx(x,{name:"TbSquareArrowLeftFilled",size:"1.75rem",onClick:()=>p("prev")}),n.jsx(y,{className:"ev-text-selector-value",size:"subheading",children:s==null?void 0:s.label}),n.jsx(x,{name:"TbSquareArrowRightFilled",size:"1.75rem",onClick:()=>p("next")})]})};try{l.displayName="TextSelector",l.__docgenInfo={description:"",displayName:"TextSelector",props:{items:{defaultValue:null,description:"",name:"items",required:!0,type:{name:"SelectorItem[]"}},width:{defaultValue:{value:"12.5rem"},description:"",name:"width",required:!1,type:{name:"Width<string | number>"}},disabled:{defaultValue:null,description:"",name:"disabled",required:!1,type:{name:"boolean"}},currentId:{defaultValue:null,description:"",name:"currentId",required:!1,type:{name:"number"}},onChange:{defaultValue:null,description:"",name:"onChange",required:!1,type:{name:"((id: number) => void)"}}}}}catch{}const C={component:l,parameters:{layout:"centered"},argTypes:{width:{type:"string"}},tags:["autodocs"]},d={args:{items:[{id:352,label:"Text 1"},{id:455,label:"Text 2"},{id:643,label:"Text 3"},{id:733,label:"Text 4"}]},render:e=>{const[o,t]=m.useState(0),i=a=>{t(a)};return n.jsx(l,{...e,currentId:o,onChange:i})}};var f,b,g;d.parameters={...d.parameters,docs:{...(f=d.parameters)==null?void 0:f.docs,source:{originalSource:`{
+  args: {
+    items: [{
+      id: 352,
+      label: "Text 1"
+    }, {
+      id: 455,
+      label: "Text 2"
+    }, {
+      id: 643,
+      label: "Text 3"
+    }, {
+      id: 733,
+      label: "Text 4"
+    }]
+  },
+  render: props => {
+    const [id, setId] = useState(0);
+    const onChange = (id: number) => {
+      setId(id);
+    };
+    return <TextSelector {...props} currentId={id} onChange={onChange} />;
+  }
+}`,...(g=(b=d.parameters)==null?void 0:b.docs)==null?void 0:g.source}}};const w=["Default"];export{d as Default,w as __namedExportsOrder,C as default};
