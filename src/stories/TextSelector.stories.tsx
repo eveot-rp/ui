@@ -1,18 +1,18 @@
-import { TextSelector } from '@components/TextSelector';
-import { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import { TextSelector } from "@components/TextSelector";
+import { Meta, StoryObj } from "@storybook/react";
+import { useState } from "react";
 
 export default {
   component: TextSelector,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   argTypes: {
     width: {
-      type: 'string',
+      type: "string",
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } as Meta<typeof TextSelector>;
 
 export const Default: StoryObj<typeof TextSelector> = {
@@ -20,19 +20,19 @@ export const Default: StoryObj<typeof TextSelector> = {
     items: [
       {
         id: 352,
-        label: 'Text 1',
+        label: "Text 1",
       },
       {
         id: 455,
-        label: 'Text 2',
+        label: "Text 2",
       },
       {
         id: 643,
-        label: 'Text 3',
+        label: "Text 3",
       },
       {
         id: 733,
-        label: 'Text 4',
+        label: "Text 4",
       },
     ],
   },
@@ -43,14 +43,6 @@ export const Default: StoryObj<typeof TextSelector> = {
       setId(id);
     };
 
-    console.log(id);
-
-    return (
-      <TextSelector
-        {...props}
-        currentId={id}
-        onChange={onChange}
-      />
-    );
+    return <TextSelector {...props} currentId={id} onChange={onChange} />;
   },
 };
