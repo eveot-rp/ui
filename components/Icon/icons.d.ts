@@ -33,4 +33,6 @@ export declare const EvEngine: (props: EvIconProps) => import("react/jsx-runtime
 export declare const EvDoors: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvSeatBelt: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvFuel: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvLock: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvLockOpen: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export {};
