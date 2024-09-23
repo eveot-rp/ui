@@ -15,5 +15,6 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
     size?: TypographySizes;
     color?: VariableColors;
     weight?: TypographyWeights;
+    align?: 'left' | 'right' | 'center';
 }
 export declare const Text: FC<PropsWithChildren<TextProps>>;
