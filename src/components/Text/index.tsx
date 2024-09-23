@@ -18,6 +18,7 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
   size?: TypographySizes;
   color?: VariableColors;
   weight?: TypographyWeights;
+  align?: 'left' | 'right' | 'center';
 }
 
 export const Text: FC<PropsWithChildren<TextProps>> = ({
@@ -25,6 +26,7 @@ export const Text: FC<PropsWithChildren<TextProps>> = ({
   size = 'h1',
   color = 'b000',
   weight = '500',
+  align,
   ...props
 }) => {
   const currentColor = color in COLORS ? COLORS[color as keyof typeof COLORS] : color;
@@ -35,6 +37,7 @@ export const Text: FC<PropsWithChildren<TextProps>> = ({
         fontSize: `${TypographySizes[size]}rem`,
         color: currentColor,
         fontWeight: weight,
+        textAlign: align,
       }}
       {...props}
     >
