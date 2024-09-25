@@ -3,5 +3,6 @@ export declare const TypographySizes: {
     h2: number;
     h3: number;
     subheading: number;
+    body1: number;
     body2: number;
 };
