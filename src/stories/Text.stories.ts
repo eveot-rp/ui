@@ -6,6 +6,12 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    color: {
+      type: 'string',
+      control: 'color',
+    },
+  },
   tags: ['autodocs'],
 } as Meta<typeof Text>;
 

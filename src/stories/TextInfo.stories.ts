@@ -9,17 +9,25 @@ export default {
   },
   argTypes: {
     iconLeft: {
-      options: IconNames
+      options: IconNames,
     },
     iconRight: {
-      options: IconNames
-    }
+      options: IconNames,
+    },
+    bg: {
+      type: 'string',
+      control: 'color',
+    },
+    borderColor: {
+      type: 'string',
+      control: 'color',
+    },
   },
   tags: ['autodocs'],
 } as Meta<typeof TextInfo>;
 
 export const Default: StoryObj<typeof TextInfo> = {
   args: {
-    children: 'Content'
-  }
+    children: 'Content',
+  },
 };

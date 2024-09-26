@@ -10,18 +10,12 @@
   color: $ev--b-100;
   background: $ev--b-400;
   border: 1px solid $ev--b-300;
-
-  &:hover {
-    border: 1px solid $ev--b-200;
-    background: $ev--b-300;
-  }
-
-  &:active:not([data-disabled="true"]) {
-    @extend %active;
-  }
+  @extend %size;
 
   &[data-active="true"] {
-    @extend %active;
+    color: $ev--b-000;
+    border: 1px solid $ev--p-300;
+    background: $ev--p-400;
   }
 
   &[data-disabled="true"] {
@@ -32,8 +26,18 @@
   }
 }
 
-%active {
-  color: $ev--b-000;
-  border: 1px solid $ev--p-300;
-  background: $ev--p-400;
+%size {
+  &[data-size='xs'] {
+    min-height: 2.5rem;
+  }
+
+  &[data-size='sm'] {
+    min-height: 3.125rem;
+    border-radius: 0.5rem;
+  }
+
+  &[data-size='md'] {
+    min-height: 3.75rem;
+    font-size: 1rem;
+  }
 }
