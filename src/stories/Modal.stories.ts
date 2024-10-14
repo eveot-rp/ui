@@ -1,18 +1,18 @@
-import { Modal } from '@components/Modal';
-import { Meta, StoryObj } from '@storybook/react';
+import { Modal } from "@components/Modal";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   component: Modal,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     image: {
-      control: 'text',
+      control: "text",
     },
     width: {
-      type: 'string',
+      type: "string",
     },
   },
 } as Meta<typeof Modal>;
@@ -20,8 +20,8 @@ export default {
 export const Static: StoryObj<typeof Modal> = {
   args: {
     image: undefined,
-    title: 'Label',
-    description: 'Description',
+    title: "Label",
+    description: "Description",
     centered: false,
     backdrop: false,
     show: true,
@@ -31,8 +31,8 @@ export const Static: StoryObj<typeof Modal> = {
 export const FullScreen: StoryObj<typeof Modal> = {
   args: {
     image: undefined,
-    title: 'Label',
-    description: 'Description',
+    title: "Label",
+    description: "Description",
     centered: true,
     backdrop: true,
     show: true,

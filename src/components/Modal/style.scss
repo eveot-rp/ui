@@ -26,6 +26,7 @@
   &[data-show="false"] {
     visibility: hidden;
     opacity: 0;
+    pointer-events: none;
     transition:
       visibility 0s 0.3s,
       opacity 0.3s ease-in-out;
