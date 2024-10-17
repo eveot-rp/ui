@@ -5,13 +5,13 @@ import { VariableColors } from "@type/Colors";
 
 export interface SwitchProps extends HTMLAttributes<HTMLDivElement> {
   size?: "sm" | "md";
-  radio: {
+  radio?: {
     color: VariableColors;
     colorHover: VariableColors;
     colorActive: VariableColors;
     colorDisabled: VariableColors;
   };
-  background: {
+  background?: {
     color: VariableColors;
     colorHover: VariableColors;
     colorActive: VariableColors;
