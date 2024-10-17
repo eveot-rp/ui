@@ -1,55 +1,78 @@
 @import "@assets/styles/app.scss";
 
 .ev-switch {
-  width: 3rem;
-  height: 1.5rem;
   border-radius: 1.438rem;
-  background: $ev--b-500;
+  background: var(--backColor);
   transition: 0.2s ease-out;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   &:hover {
-    background: $ev--b-400;
+    background: var(--backColorHover);
 
     .ev-switch-radio {
-      background: $ev--b-200;
+      background: var(--radioColorHover);
     }
   }
 
   &:active {
-    background: $ev--p-400;
+    background: var(--backColorActive);
 
     .ev-switch-radio {
-      background: $ev--b-100;
-      margin-left: 0.75rem;
+      background: var(--radioColorActive);
+      margin-left: 50% !important;
     }
   }
 
   &-radio {
-    width: 1.5rem;
-    height: 1.5rem;
     border-radius: 100%;
-    background: $ev--b-300;
+    background: var(--radioColor);
     transition: 0.2s ease-out;
   }
 
   &[data-toggle="true"] {
-    background: $ev--p-500;
+    background: var(--backColorActive);
 
     .ev-switch-radio {
-      background: $ev--b-000;
-      margin-left: 1.5rem;
+      background: var(--radioColorActive);
+      margin-left: auto !important;
     }
   }
 
   &[data-disabled="true"] {
-    background: $ev--b-500;
+    background: var(--backColorDisabled);
     outline: 1px solid $ev--b-300;
     cursor: not-allowed;
 
     .ev-switch-radio {
-      background: $ev--b-300;
+      background: var(--radioColorDisabled);
       margin-left: 0;
+    }
+  }
+
+  @extend %size;
+}
+
+%size {
+  &[data-size='sm'] {
+    width: 2.3125rem;
+    height: 1.25rem;
+
+    .ev-switch-radio {
+      width: 1rem;
+      height: 1rem;
+      margin: 0 0.125rem;
+    }
+  }
+
+  &[data-size='md'] {
+    width: 3rem;
+    height: 1.5rem;
+
+    .ev-switch-radio {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 }
