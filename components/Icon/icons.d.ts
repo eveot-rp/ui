@@ -46,4 +46,5 @@ export declare const EvFuel: (props: EvIconProps) => import("react/jsx-runtime")
 export declare const EvLock: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvLockOpen: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvPhoneBattery: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvPhoneWallpaper: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export {};
