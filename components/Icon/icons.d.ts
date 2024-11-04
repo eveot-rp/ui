@@ -7,6 +7,11 @@ import { SVGProps } from '../../../node_modules/react';
  * @param {SVGSVGElement} stroke currentColor
  */
 type EvIconProps = SVGProps<SVGSVGElement>;
+export declare const EvCircleMinus: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvCircleLockTransparent: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvGarage: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvCircleBurger: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvHousing: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvGridDots: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvUser: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvClockHour9: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
