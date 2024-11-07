@@ -25,6 +25,7 @@ export interface InputProps
   iconLeft?: IconName;
   iconRight?: IconName;
   textInfo?: TextInfoProps;
+  maxValue?: number;
 }
 
 export const Input = forwardRef<
@@ -45,6 +46,7 @@ export const Input = forwardRef<
       onChange,
       children,
       className,
+      maxValue,
       ...props
     },
     parentRef
@@ -72,6 +74,8 @@ export const Input = forwardRef<
         if (value === "") event.currentTarget.value = String(props.min || "");
 
         if (!isNumber && value) return;
+
+        if (maxValue && Number(event.currentTarget.value) > maxValue) return;
       }
       onChange && onChange(event);
     };
