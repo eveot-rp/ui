@@ -12,6 +12,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
     iconLeft?: IconName;
     iconRight?: IconName;
     textInfo?: TextInfoProps;
+    maxValue?: number;
 }
 export declare const Input: import('../../../node_modules/react').ForwardRefExoticComponent<InputProps & {
     children?: import('../../../node_modules/react').ReactNode | undefined;
