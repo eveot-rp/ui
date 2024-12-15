@@ -24,7 +24,7 @@ export const EVTickSquare = (props: EvIconProps) => (
   </svg>
 );
 
-export const EVTimer = (props: EvIconProps) => (
+export const EVHourglass = (props: EvIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="17"
