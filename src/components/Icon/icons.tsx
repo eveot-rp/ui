@@ -8,6 +8,22 @@ import { SVGProps } from "react";
  */
 type EvIconProps = SVGProps<SVGSVGElement>;
 
+export const EvImageEmpty = (props: EvIconProps) => (
+  <svg
+    width="94"
+    height="94"
+    viewBox="0 0 94 94"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M70.5 11.75H23.5C16.8417 11.75 11.75 16.8417 11.75 23.5V70.5C11.75 77.1583 16.8417 82.25 23.5 82.25H70.5C77.1583 82.25 82.25 77.1583 82.25 70.5V23.5C82.25 16.8417 77.1583 11.75 70.5 11.75ZM31.3333 27.4167C34.4667 27.4167 37.2083 30.1583 37.2083 33.2917C37.2083 36.425 34.4667 39.1667 31.3333 39.1667C28.2 39.1667 25.4583 36.425 25.4583 33.2917C25.4583 30.1583 28.2 27.4167 31.3333 27.4167ZM74.4167 69.7167C74.4167 72.0667 72.85 74.025 70.5 74.4167H23.5L53.2667 47.7833C54.4417 47 56.0083 47 56.7917 47.7833L74.4167 65.4083V69.7167Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 export const EvCube = (props: EvIconProps) => (
   <svg
     width="12"
