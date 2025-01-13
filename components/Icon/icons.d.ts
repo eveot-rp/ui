@@ -7,6 +7,25 @@ import { SVGProps } from '../../../node_modules/react';
  * @param {SVGSVGElement} stroke currentColor
  */
 type EvIconProps = SVGProps<SVGSVGElement>;
+export declare const EvCube: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvKeyLock: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvCalendar: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvKG: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvRoad: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvPlusSquare: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvViews: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvArrowDown: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvMesh: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvBarSort: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvExit: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvStore: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvBag: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvHeart: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvHandshake: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvBox: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvBusiness: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvHouse: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvCar1: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvUserSqure: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvTrade: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvBurger: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
