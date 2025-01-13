@@ -1,16 +1,17 @@
-import { Button } from '@components/Button';
-import { useOuterClick } from '@hooks/useOuterClick';
-import { FC, HTMLAttributes, PropsWithChildren } from 'react';
-import { IconName } from '..';
-import './style.scss';
+import { Button } from "@components/Button";
+import { useOuterClick } from "@hooks/useOuterClick";
+import { FC, HTMLAttributes, PropsWithChildren } from "react";
+import { IconName } from "..";
+import "./style.scss";
 
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   open?: boolean;
   label?: string;
-  triggerSize?: 'xs' | 'sm' | 'md';
+  triggerSize?: "xs" | "sm" | "md";
   triggerCentered?: boolean;
   triggerIcon?: IconName;
   triggerWidth?: string;
+  rightIcon?: IconName;
   onOpen?: () => void;
   onClose?: () => void;
 }
@@ -18,9 +19,10 @@ export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
 export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   label,
   triggerIcon,
-  triggerWidth = '13.125rem',
-  triggerSize = 'sm',
+  triggerWidth = "13.125rem",
+  triggerSize = "sm",
   triggerCentered = false,
+  rightIcon,
   open,
   children,
   onOpen,
@@ -32,7 +34,7 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
 
   return (
     <div
-      className={`ev-dropdown ${className ?? ''}`}
+      className={`ev-dropdown ${className ?? ""}`}
       ref={ref}
       style={{ width: triggerWidth }}
       data-open={open}
@@ -41,14 +43,13 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
     >
       <Button
         iconLeft={triggerIcon}
-        iconRight='TbCaretDownFilled'
+        iconRight={rightIcon ? rightIcon : "TbCaretDownFilled"}
         size={triggerSize}
         centered={triggerCentered}
       >
         {label}
       </Button>
-      <div className='ev-dropdown-content'>{children}</div>
+      <div className="ev-dropdown-content">{children}</div>
     </div>
   );
 };
-
