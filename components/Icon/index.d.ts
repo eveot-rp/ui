@@ -2,14 +2,14 @@ import { VariableColors } from '../../types/Colors';
 import { FC, HTMLAttributes } from '../../../node_modules/react';
 import { IconBaseProps } from 'react-icons';
 
-import * as tbicons from 'react-icons/tb';
-import * as evicons from './icons';
+import * as tbicons from "react-icons/tb";
+import * as evicons from "./icons";
 type TablerIconName = keyof typeof tbicons;
 type EveotIconName = keyof typeof evicons;
 export type IconName = TablerIconName | EveotIconName;
 export interface IconProps extends HTMLAttributes<HTMLDivElement> {
     name: IconName;
-    size?: IconBaseProps['size'];
+    size?: IconBaseProps["size"];
     color?: VariableColors;
     onClick?: () => void;
 }
