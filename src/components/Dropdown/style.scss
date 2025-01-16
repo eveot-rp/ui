@@ -37,6 +37,8 @@
     box-sizing: border-box;
     z-index: 1;
 
+    pointer-events: none;
+
     .ev-button {
       border-radius: 0;
       border: 0 !important;
@@ -50,5 +52,6 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 0.3s;
+    pointer-events: all;
   }
 }

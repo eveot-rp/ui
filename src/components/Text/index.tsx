@@ -25,10 +25,15 @@ export interface TextProps extends HTMLAttributes<HTMLSpanElement> {
    * - body1: 0.75rem (12px)
    * - body2: 0.625rem (10px)
    */
-  size?: TypographySizes;
+  size?: TypographySizes | string;
   color?: VariableColors;
   weight?: TypographyWeights;
   align?: "left" | "right" | "center";
+  letterSpacing?: string;
+}
+
+function isTypographySizes(size: string): size is TypographySizes {
+  return Object.keys(TypographySizes).includes(size);
 }
 
 export const Text: FC<PropsWithChildren<TextProps>> = ({
@@ -37,6 +42,7 @@ export const Text: FC<PropsWithChildren<TextProps>> = ({
   color = "b000",
   weight = "500",
   align,
+  letterSpacing,
   ...props
 }) => {
   const currentColor =
@@ -45,10 +51,13 @@ export const Text: FC<PropsWithChildren<TextProps>> = ({
   return (
     <span
       style={{
-        fontSize: `${TypographySizes[size]}rem`,
+        fontSize: isTypographySizes(size)
+          ? `${TypographySizes[size]}rem`
+          : size,
         color: currentColor,
         fontWeight: weight,
         textAlign: align,
+        letterSpacing: letterSpacing,
       }}
       {...props}
     >
