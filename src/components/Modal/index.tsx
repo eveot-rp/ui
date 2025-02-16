@@ -72,7 +72,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
                 </div>
               )}
             </div>
-            <p>{description}</p>
+            {description && <p>{description}</p>}
           </div>
         )}
         {children}
