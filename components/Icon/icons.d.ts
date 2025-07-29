@@ -7,6 +7,21 @@ import { SVGProps } from '../../../node_modules/react';
  * @param {SVGSVGElement} stroke currentColor
  */
 type EvIconProps = SVGProps<SVGSVGElement>;
+export declare const EvShieldCross: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvShieldCheck: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvFishingRod: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvWeapon: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvShip: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvPlane2: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvMotorcycle: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvTruck: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvSecurityUser: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvClockHour5: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvMaritalRings: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvWalletRemove: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvWalletAdd: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvCrown2: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvTriangleWarning: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvNotification: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvShield: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvSwords: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
