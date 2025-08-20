@@ -7,6 +7,9 @@ import { SVGProps } from '../../../node_modules/react';
  * @param {SVGSVGElement} stroke currentColor
  */
 type EvIconProps = SVGProps<SVGSVGElement>;
+export declare const EvKeyboard: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvRMB: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const EvLMB: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvShieldCross: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvShieldCheck: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
 export declare const EvFishingRod: (props: EvIconProps) => import("react/jsx-runtime").JSX.Element;
